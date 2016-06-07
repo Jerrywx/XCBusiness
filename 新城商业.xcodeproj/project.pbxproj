@@ -26,6 +26,7 @@
 		C46C3D251CDCE06C0040E9A7 /* XCLeftBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C46C3D241CDCE06C0040E9A7 /* XCLeftBarControl.m */; };
 		C4CA73CC1CE0A2800091733B /* XCChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */; };
 		C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */; };
+		C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF81D069B720016E864 /* XCURLConstantString.m */; };
 		C4D5764B1CD0DD2E00115620 /* XCTabBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D5764A1CD0DD2E00115620 /* XCTabBarControl.m */; };
 		C4FBEA491CE5E71A00DC1337 /* XCBaseChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FBEA481CE5E71A00DC1337 /* XCBaseChannelViewController.m */; };
 		FA72B33DBFA6D4A90B696711 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFDA291E697D1D5D67EBCCA /* libPods.a */; };
@@ -90,6 +91,8 @@
 		C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelViewController.m; sourceTree = "<group>"; };
 		C4CDFDF41D0695C80016E864 /* XCNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNetWorkManager.h; sourceTree = "<group>"; };
 		C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNetWorkManager.m; sourceTree = "<group>"; };
+		C4CDFDF71D069B720016E864 /* XCURLConstantString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCURLConstantString.h; sourceTree = "<group>"; };
+		C4CDFDF81D069B720016E864 /* XCURLConstantString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCURLConstantString.m; sourceTree = "<group>"; };
 		C4D576491CD0DD2E00115620 /* XCTabBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTabBarControl.h; sourceTree = "<group>"; };
 		C4D5764A1CD0DD2E00115620 /* XCTabBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTabBarControl.m; sourceTree = "<group>"; };
 		C4FBEA471CE5E71A00DC1337 /* XCBaseChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBaseChannelViewController.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 		C4CDFDF01D06949A0016E864 /* NetworkTools */ = {
 			isa = PBXGroup;
 			children = (
+				C4CDFDF71D069B720016E864 /* XCURLConstantString.h */,
+				C4CDFDF81D069B720016E864 /* XCURLConstantString.m */,
 				C4CDFDF41D0695C80016E864 /* XCNetWorkManager.h */,
 				C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */,
 			);
@@ -545,6 +550,7 @@
 				C4FBEA491CE5E71A00DC1337 /* XCBaseChannelViewController.m in Sources */,
 				C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */,
 				C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */,
+				C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */,
 				C428F2731CCD227100E8129B /* XCTabBarController.m in Sources */,
 				C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */,
 				C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */,

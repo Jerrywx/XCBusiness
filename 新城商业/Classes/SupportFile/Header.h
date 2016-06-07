@@ -13,6 +13,9 @@
 #import "XCTabBarController.h"													// 程序 根控制器
 #import "XCBaseViewController.h"												// 程序 基控制器
 
+// 网络接口 PAI
+#import "XCURLConstantString.h"
+
 // 自定义: TabBar、LeftBar
 #import "XCTabBarControl.h"
 #import "XCLeftBarControl.h"
