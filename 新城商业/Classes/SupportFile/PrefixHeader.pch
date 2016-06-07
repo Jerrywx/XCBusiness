@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  新城商业
+//
+//  Created by 王潇 on 16/4/24.
+//  Copyright © 2016年 王潇. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// 头文件
+#import "Header.h"
+
+// 屏幕尺寸常量
+#define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
+
+// 状态栏、导航栏尺寸
+#define NAVBAR_H 44
+#define STATUS_H 20
+
+// XCTabBarControl 尺寸
+#define XCTABB_H 80
+#define XCTLIN_X (SCREEN_W / 3)
+
+// XCLeftBarControl 尺寸
+#define XCLEFT_W 140
+
+
+// TableView Cell Height
+#define TABLECELL_H 70
+#define TABLEICON_H 50
+
+
+#endif /* PrefixHeader_pch */
