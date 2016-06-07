@@ -24,6 +24,8 @@
 		C446866D1CD1FED4009FF94D /* XCBussTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C446866C1CD1FED4009FF94D /* XCBussTableViewCell.m */; };
 		C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E640F1CD2154100455AAF /* XCBussCollectionViewCell.m */; };
 		C46C3D251CDCE06C0040E9A7 /* XCLeftBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C46C3D241CDCE06C0040E9A7 /* XCLeftBarControl.m */; };
+		C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */; };
+		C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */; };
 		C4CA73CC1CE0A2800091733B /* XCChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */; };
 		C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */; };
 		C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF81D069B720016E864 /* XCURLConstantString.m */; };
@@ -87,6 +89,10 @@
 		C45E640F1CD2154100455AAF /* XCBussCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussCollectionViewCell.m; sourceTree = "<group>"; };
 		C46C3D231CDCE06C0040E9A7 /* XCLeftBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCLeftBarControl.h; sourceTree = "<group>"; };
 		C46C3D241CDCE06C0040E9A7 /* XCLeftBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCLeftBarControl.m; sourceTree = "<group>"; };
+		C4BE58611D070E5800A2A4FA /* XCBussDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussDelegate.h; sourceTree = "<group>"; };
+		C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussDelegate.m; sourceTree = "<group>"; };
+		C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussVideoModel.h; sourceTree = "<group>"; };
+		C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussVideoModel.m; sourceTree = "<group>"; };
 		C4CA73CA1CE0A2800091733B /* XCChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelViewController.h; sourceTree = "<group>"; };
 		C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelViewController.m; sourceTree = "<group>"; };
 		C4CDFDF41D0695C80016E864 /* XCNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNetWorkManager.h; sourceTree = "<group>"; };
@@ -309,6 +315,8 @@
 			children = (
 				C44686631CD1FEBC009FF94D /* XCBussViewController.h */,
 				C44686641CD1FEBC009FF94D /* XCBussViewController.m */,
+				C4BE58611D070E5800A2A4FA /* XCBussDelegate.h */,
+				C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */,
 				C44686651CD1FEBC009FF94D /* XCTestViewController.h */,
 				C44686661CD1FEBC009FF94D /* XCTestViewController.m */,
 			);
@@ -318,6 +326,8 @@
 		C44686671CD1FEBC009FF94D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */,
+				C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -541,6 +551,7 @@
 				C4CA73CC1CE0A2800091733B /* XCChannelViewController.m in Sources */,
 				C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */,
 				C446866D1CD1FED4009FF94D /* XCBussTableViewCell.m in Sources */,
+				C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */,
 				C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */,
 				C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */,
 				C46C3D251CDCE06C0040E9A7 /* XCLeftBarControl.m in Sources */,
@@ -548,6 +559,7 @@
 				C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */,
 				C446866A1CD1FEBC009FF94D /* XCTestViewController.m in Sources */,
 				C4FBEA491CE5E71A00DC1337 /* XCBaseChannelViewController.m in Sources */,
+				C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */,
 				C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */,
 				C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */,
 				C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */,
@@ -698,12 +710,15 @@
 			baseConfigurationReference = FD81F3C559D045D424660397 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "新城商业/Classes/SupportFile/PrefixHeader.pch";
 				INFOPLIST_FILE = "新城商业/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jerry.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -712,12 +727,15 @@
 			baseConfigurationReference = C89AD06C6A8E4282375C9663 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "新城商业/Classes/SupportFile/PrefixHeader.pch";
 				INFOPLIST_FILE = "新城商业/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jerry.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

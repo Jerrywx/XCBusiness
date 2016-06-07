@@ -14,6 +14,7 @@
 #import "XCBaseViewController.h"												// 程序 基控制器
 
 // 网络接口 PAI
+#import "XCNetWorkManager.h"
 #import "XCURLConstantString.h"
 
 // 自定义: TabBar、LeftBar
@@ -28,6 +29,9 @@
 #import "XCInveViewController.h"
 #import "XCInduViewController.h"
 #import "XCDataViewController.h"
+
+// 新城商业 模块 代理对象
+#import "XCBussDelegate.h"
 
 // 第三方框架
 #import <Masonry.h>

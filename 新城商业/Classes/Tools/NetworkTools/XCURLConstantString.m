@@ -14,5 +14,6 @@
  *  left
  */
 NSString * const _kAPI_GetLeftMuen			=       @"正在获取验证码";
+NSString * const _kAPI_BaseUrl				=       @"www.baidu.com";
 
 @end

@@ -27,11 +27,6 @@
 	return shareInstance;
 }
 
-/**
- *  <#Description#>
- *
- *  @return <#return value description#>
- */
 - (instancetype)init {
 	
 	if (self = [super init]) {
@@ -52,6 +47,91 @@
 	return self;
 }
 
+#pragma mark - 
+#pragma mark - GET Methond
+- (void)getWithURL:(NSString *)url
+		parameters:(NSDictionary *)parameters
+		   success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
+		   failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure {
+	
+	[self.sharedSessionManager GET:url
+						parameters:parameters
+						  progress:nil
+						   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+							   success(task, responseObject);
+						   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+							   failure(task, error);
+						   }];
+}
+
+- (void)getWithURL:(NSString *)url
+		parameters:(NSDictionary *)parameters
+		  progress:(void (^)(NSProgress * _Nonnull))downloadProgress
+		   success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
+		   failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure {
+	
+	[self.sharedSessionManager GET:url 
+						parameters:parameters 
+						  progress:^(NSProgress * _Nonnull progress) {
+							  downloadProgress(progress);
+						  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+							  success(task, responseObject);
+						  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+							  failure(task, error);
+						  }];
+}
+
+#pragma mark - POST Methond
+- (void)postWithURL:(NSString *)url
+		 parameters:(NSDictionary *)parameters
+			success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
+			failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure {
+	
+	[self.sharedSessionManager POST:url
+						 parameters:parameters
+						   progress:nil 
+							success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+								success(task, responseObject);
+							} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+								failure(task, error);
+							}];
+}
+
+
+- (void)postWithURL:(NSString *)url
+		 parameters:(NSDictionary *)parameters
+		   progress:(void (^)(NSProgress * _Nonnull))uploadProgress
+			success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
+			failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure {
+	
+	[self.sharedSessionManager POST:url
+						 parameters:parameters
+						   progress:^(NSProgress * _Nonnull progress) {
+							   uploadProgress(progress);
+						   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+							   success(task, responseObject);
+						   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+							   failure(task, error);
+						   }];
+}
+
+#pragma mark -
+
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
