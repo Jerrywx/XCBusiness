@@ -10,4 +10,6 @@
 
 @interface XCBussCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) XCBussNewsModel	*model;
+
 @end

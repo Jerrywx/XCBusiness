@@ -26,6 +26,8 @@
 		// 1. 视频封面
 		self.imgView = ({
 			UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, imgW, imgH)];
+			imgView.contentMode  = UIViewContentModeScaleAspectFill;
+			imgView.clipsToBounds = YES;
 			[self.contentView addSubview:imgView];
 			imgView;
 		});
@@ -34,8 +36,9 @@
 		self.titleLabel = ({
 			UILabel *label	= [[UILabel alloc] initWithFrame:CGRectMake(0, imgH, imgW, contentH * (2 / 3.0))];
 			label.text		= @"视频名称";
-			label.font		= [UIFont systemFontOfSize:10];
+			label.font		= [UIFont systemFontOfSize:13];
 			label.textColor = [UIColor blackColor];
+			label.numberOfLines = 2;
 			[self.contentView addSubview:label];
 			label;
 		});
@@ -44,17 +47,27 @@
 		self.infoLabel = ({
 			UILabel *label	= [[UILabel alloc] initWithFrame:CGRectMake(0, imgH + contentH * (2 / 3.0), imgW, contentH * (1 / 3.0))];
 			label.text		= @"太空探索 | 2016.05.14";
-			label.font		= [UIFont systemFontOfSize:9];
+			label.font		= [UIFont systemFontOfSize:11];
 			label.textColor = [UIColor lightGrayColor];
 			[self.contentView addSubview:label];
 			label;
 		});
-
-		self.imgView.backgroundColor = [UIColor orangeColor];
-		self.titleLabel.backgroundColor = [UIColor greenColor];
-		self.infoLabel.backgroundColor = [UIColor darkGrayColor];
 	}
 	return self;
+}
+
+- (void)setModel:(XCBussNewsModel *)model {
+	_model = model;
+	// 1.
+	[self.imgView sd_setImageWithURL:[NSURL URLWithString:model.logo]
+					placeholderImage:nil
+							 options:SDWebImageRetryFailed];
+	
+	// 2.
+	self.titleLabel.text = [NSString stringWithFormat:@"%@ , %@", model.title1, model.title2];
+	
+	// 3.
+	self.infoLabel.text = [NSString stringWithFormat:@"%@ | %@", model.in_cn, model.date];
 }
 
 @end

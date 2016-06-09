@@ -20,6 +20,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if (self.videoModels.count == 0) {
+		return 8;
+	}
 	return self.videoModels.count;
 }
 
@@ -33,6 +36,7 @@
 	
 	// 2. 设置 cell
 	cell.backgroundColor = [UIColor colorWithRed:0.25f green:0.24f blue:0.29f alpha:1.00f];
+	cell.model = self.videoModels[indexPath.row];
 	
 	// 3. 返回 cell
 	return cell;
@@ -57,13 +61,17 @@
 
 #pragma mark - UICollectipnViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	
+	if (self.newsModels.count == 0) {
+		return 8;
+	}
 	return self.newsModels.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
 	XCBussCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collection" forIndexPath:indexPath];
-	cell.backgroundColor = [UIColor grayColor];
+	cell.model = self.newsModels[indexPath.row];
 	return cell;
 }
 

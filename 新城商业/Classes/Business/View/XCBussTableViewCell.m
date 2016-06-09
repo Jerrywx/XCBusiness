@@ -56,4 +56,15 @@
 	return self;
 }
 
+- (void)setModel:(XCBussVideoModel *)model {
+	
+	[self.iconView sd_setImageWithURL:[NSURL URLWithString:model.vb_logo]
+					 placeholderImage:nil 
+							  options:SDWebImageRetryFailed];
+	
+	self.titleLabel.text = model.vb_title;
+	
+	self.classLabel.text = [NSString stringWithFormat:@"第%@期", model.vb_num];
+}
+
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646DD1D08E9370063C3DD /* NSArray+Log.m */; };
+		C42646E11D08F88B0063C3DD /* XCBussNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E01D08F88B0063C3DD /* XCBussNewsModel.m */; };
 		C428F22E1CCCE83800E8129B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F22D1CCCE83800E8129B /* main.m */; };
 		C428F2371CCCE83800E8129B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C428F2351CCCE83800E8129B /* Main.storyboard */; };
 		C428F2391CCCE83800E8129B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C428F2381CCCE83800E8129B /* Assets.xcassets */; };
@@ -53,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		AAFDA291E697D1D5D67EBCCA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C42646DC1D08E9370063C3DD /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		C42646DD1D08E9370063C3DD /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		C42646DF1D08F88B0063C3DD /* XCBussNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussNewsModel.h; sourceTree = "<group>"; };
+		C42646E01D08F88B0063C3DD /* XCBussNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussNewsModel.m; sourceTree = "<group>"; };
 		C428F2291CCCE83800E8129B /* 新城商业.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新城商业.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C428F22D1CCCE83800E8129B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C428F2361CCCE83800E8129B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +154,15 @@
 				AAFDA291E697D1D5D67EBCCA /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C42646DB1D08E9370063C3DD /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				C42646DC1D08E9370063C3DD /* NSArray+Log.h */,
+				C42646DD1D08E9370063C3DD /* NSArray+Log.m */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		C428F2201CCCE83800E8129B = {
@@ -296,6 +311,7 @@
 		C428F26A1CCD12AB00E8129B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C42646DB1D08E9370063C3DD /* Log */,
 				C4CDFDF01D06949A0016E864 /* NetworkTools */,
 			);
 			path = Tools;
@@ -328,6 +344,8 @@
 			children = (
 				C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */,
 				C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */,
+				C42646DF1D08F88B0063C3DD /* XCBussNewsModel.h */,
+				C42646E01D08F88B0063C3DD /* XCBussNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +571,7 @@
 				C446866D1CD1FED4009FF94D /* XCBussTableViewCell.m in Sources */,
 				C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */,
 				C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */,
+				C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */,
 				C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */,
 				C46C3D251CDCE06C0040E9A7 /* XCLeftBarControl.m in Sources */,
 				C4D5764B1CD0DD2E00115620 /* XCTabBarControl.m in Sources */,
@@ -563,6 +582,7 @@
 				C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */,
 				C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */,
 				C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */,
+				C42646E11D08F88B0063C3DD /* XCBussNewsModel.m in Sources */,
 				C428F2731CCD227100E8129B /* XCTabBarController.m in Sources */,
 				C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */,
 				C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */,

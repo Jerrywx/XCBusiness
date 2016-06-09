@@ -7,21 +7,25 @@
 //
 
 #import "XCBussViewController.h"
-#import "XCBussVideoModel.h"
 
 @interface XCBussViewController () //<UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UITableView					*tableView;
 @property (nonatomic, strong) UICollectionView				*collectionView;
-@property (nonatomic, strong) UICollectionViewFlowLayout	*layout;
-@property (nonatomic, strong) XCBussDelegate				*delegate;
+@property (nonatomic, strong) UICollectionViewFlowLayout	*layout;			// 布局
+@property (nonatomic, strong) XCBussDelegate				*delegate;			// 代理对象
+
+@property (nonatomic, strong) NSMutableArray<XCBussNewsModel *> *newsModels;	// 右侧新闻数据源
+@property (nonatomic, strong) NSMutableArray<XCBussVideoModel *> *videoModels;	// 右侧新闻数据源
+
 @end
 
 @implementation XCBussViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
 	[self setupView];
-	[self loadData];
+	[self setupLoadView];
 }
 
 - (void)setupView {
@@ -54,16 +58,45 @@
 	});
 }
 
-- (void)loadData {
-	NSLog(@"=====data");
-	
-//	self.delegate.videoModels = @[@"1", @"3",@"4",@"1", @"3",@"4"];
-//	self.delegate.newsModels = @[@"1", @"3",@"4",@"1", @"3",@"4"];
-//	
-//	[self.tableView reloadData];
-//	[self.collectionView reloadData];
-	
-	[XCBussVideoModel loadData];
+- (void)setupLoadView {
+	// 下拉加载数据
+	self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+																	 refreshingAction:@selector(loadDataNews)];
+	self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+																refreshingAction:@selector(loadDataVideos)];
+	[self.collectionView.mj_header beginRefreshing];
+	[self.tableView.mj_header beginRefreshing];
+}
+
+- (void)loadDataNews {
+	//
+	[XCBussNewsModel loadWithURL:nil success:^(NSMutableArray *models) {
+		NSLog(@"数据: %@", models);
+		self.newsModels = models;
+		[self.collectionView.mj_header endRefreshing];
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		[self.collectionView.mj_header endRefreshing];
+		NSLog(@"失败: %@", error);
+	}];
+}
+
+- (void)loadDataVideos {
+	[XCBussVideoModel loadWithURL:nil success:^(NSMutableArray *models) {
+		NSLog(@"数据-----: %@", models);
+		self.videoModels = models;
+		self.delegate.videoModels = models;
+		[self.tableView reloadData];
+		[self.tableView.mj_header endRefreshing];
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		[self.tableView.mj_header endRefreshing];
+		NSLog(@"失败: %@", error);
+	}];
+}
+
+- (void)setNewsModels:(NSMutableArray<XCBussNewsModel *> *)newsModels {
+	_newsModels = newsModels;
+	self.delegate.newsModels = newsModels;
+	[self.collectionView reloadData];
 }
 
 #pragma mark -

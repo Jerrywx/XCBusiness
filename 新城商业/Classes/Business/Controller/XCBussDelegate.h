@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class XCBussNewsModel;
 @interface XCBussDelegate : NSObject <UITableViewDataSource, UITableViewDelegate,
 								UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -19,6 +20,6 @@
 /**
  *  右侧新闻列表
  */
-@property (nonatomic, strong) NSArray *newsModels;
+@property (nonatomic, strong) NSArray<XCBussNewsModel *> *newsModels;
 
 @end

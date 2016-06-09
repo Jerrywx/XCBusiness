@@ -10,7 +10,6 @@
 
 @interface XCBussTableViewCell : UITableViewCell
 
-
-
+@property (nonatomic, strong) XCBussVideoModel	*model;
 
 @end

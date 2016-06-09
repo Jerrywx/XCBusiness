@@ -10,23 +10,38 @@
 
 @implementation XCBussVideoModel
 
-+ (void)loadData {
-//	http://api.xincheng.tv/api/getcontent/?cr_p=1
-	NSDictionary *param = @{@"cr_p":@"1"};
-	[[XCNetWorkManager shareManager] getWithURL:@"http://api.xincheng.tv/api/getcontent"
-									 parameters:param
-										success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-											NSLog(@"成功: %@", responseObject);
-										} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-											NSLog(@"失败: %@", error);
-										}];
++ (void)loadWithURL:(NSString *)urlString
+			success:(nullable void (^)(NSMutableArray *models))success
+			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
-//	[[XCNetWorkManager shareManager] postWithURL:@"http://api.xincheng.tv/api/getcontent" parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-//		NSLog(@"成功: %@", responseObject);
-//	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-//		NSLog(@"失败: %@", error);
-//	}];
-	
+	[[XCNetWorkManager shareManager] postWithURL:@"http://api.xincheng.tv/api/getv_b/" parameters:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+		
+		 NSInteger code = [responseObject[@"errorcode"] integerValue];
+		
+		 if (code == 1000) {
+			 NSArray *datas = responseObject[@"data"];
+			 NSMutableArray *models = [NSMutableArray arrayWithCapacity:datas.count];
+			 
+			 for (NSDictionary *dict in datas) {
+				 XCBussVideoModel *model = [XCBussVideoModel mj_objectWithKeyValues:dict];
+				 [models addObject:model];
+			 }
+			 
+			 success(models);
+		 } else {
+			 failure(task, nil);
+		 }
+		
+	 } failure:^(NSURLSessionDataTask * _Nullable task, 
+				 NSError * _Nullable error) {
+		failure(task, error);
+	 }];
 }
+
+
+- (NSString *)description {
+	return [NSString stringWithFormat:@"%@ - %@", self.vb_title, self.vb_logo];
+}
+
 
 @end

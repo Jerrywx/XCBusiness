@@ -32,6 +32,8 @@
 
 // 新城商业 模块 代理对象
 #import "XCBussDelegate.h"
+#import "XCBussVideoModel.h"
+#import "XCBussNewsModel.h"
 
 // 第三方框架
 #import <Masonry.h>
@@ -39,6 +41,7 @@
 #import <MJExtension.h>
 #import <AFNetworking.h>
 #import <HMSegmentedControl.h>
+#import <UIImageView+WebCache.h>
 
 // 新城商业
 #import "XCBussTableViewCell.h"
