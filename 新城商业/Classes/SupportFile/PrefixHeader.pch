@@ -25,7 +25,7 @@
 #define XCTLIN_X (SCREEN_W / 3)
 
 // XCLeftBarControl 尺寸
-#define XCLEFT_W 140
+#define XCLEFT_W 160
 
 
 // TableView Cell Height

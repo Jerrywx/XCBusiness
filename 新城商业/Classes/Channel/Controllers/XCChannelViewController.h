@@ -15,4 +15,14 @@
  */
 @property (nonatomic, strong) NSString *backTitle;
 
+/**
+ *  索引
+ */
+@property (nonatomic, assign) NSInteger	index;
+
+/**
+ *  数据源
+ */
+@property (nonatomic, strong) NSArray *channels;
+
 @end

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646DD1D08E9370063C3DD /* NSArray+Log.m */; };
 		C42646E11D08F88B0063C3DD /* XCBussNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E01D08F88B0063C3DD /* XCBussNewsModel.m */; };
+		C42646EA1D08FEBF0063C3DD /* XCLeftBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E41D08FEBF0063C3DD /* XCLeftBarControl.m */; };
+		C42646EB1D08FEBF0063C3DD /* XCTabBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E61D08FEBF0063C3DD /* XCTabBarControl.m */; };
+		C42646EC1D08FEBF0063C3DD /* XCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E81D08FEBF0063C3DD /* XCTabBarController.m */; };
+		C42646EF1D0908310063C3DD /* XCLeftBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646EE1D0908310063C3DD /* XCLeftBarModel.m */; };
 		C428F22E1CCCE83800E8129B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F22D1CCCE83800E8129B /* main.m */; };
 		C428F2371CCCE83800E8129B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C428F2351CCCE83800E8129B /* Main.storyboard */; };
 		C428F2391CCCE83800E8129B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C428F2381CCCE83800E8129B /* Assets.xcassets */; };
@@ -16,23 +20,33 @@
 		C428F2471CCCE83800E8129B /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2461CCCE83800E8129B /* ____Tests.m */; };
 		C428F2521CCCE83800E8129B /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2511CCCE83800E8129B /* ____UITests.m */; };
 		C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2611CCD12AB00E8129B /* AppDelegate.m */; };
-		C428F2731CCD227100E8129B /* XCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2721CCD227100E8129B /* XCTabBarController.m */; };
 		C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2751CCD240400E8129B /* XCBaseViewController.m */; };
 		C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F27E1CCD255000E8129B /* XCDataViewController.m */; };
 		C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2811CCD255A00E8129B /* XCInduViewController.m */; };
 		C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2841CCD256200E8129B /* XCInveViewController.m */; };
+		C436D6AE1D3254BD00B3822D /* XCBaseChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */; };
+		C436D6AF1D3254BD00B3822D /* XCChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D6AB1D3254BD00B3822D /* XCChannelViewController.m */; };
 		C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44686641CD1FEBC009FF94D /* XCBussViewController.m */; };
 		C446866A1CD1FEBC009FF94D /* XCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44686661CD1FEBC009FF94D /* XCTestViewController.m */; };
 		C446866D1CD1FED4009FF94D /* XCBussTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C446866C1CD1FED4009FF94D /* XCBussTableViewCell.m */; };
 		C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E640F1CD2154100455AAF /* XCBussCollectionViewCell.m */; };
-		C46C3D251CDCE06C0040E9A7 /* XCLeftBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C46C3D241CDCE06C0040E9A7 /* XCLeftBarControl.m */; };
+		C4864AEB1D2E979800ED1469 /* XCBottonExtenController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864AE41D2E979800ED1469 /* XCBottonExtenController.m */; };
+		C4864AED1D2E979800ED1469 /* XCPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864AE81D2E979800ED1469 /* XCPlayerViewController.m */; };
+		C4864AF01D2EA03700ED1469 /* XCBottonNews.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864AEF1D2EA03700ED1469 /* XCBottonNews.m */; };
+		C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */; };
 		C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */; };
 		C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */; };
-		C4CA73CC1CE0A2800091733B /* XCChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */; };
 		C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */; };
 		C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF81D069B720016E864 /* XCURLConstantString.m */; };
-		C4D5764B1CD0DD2E00115620 /* XCTabBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D5764A1CD0DD2E00115620 /* XCTabBarControl.m */; };
-		C4FBEA491CE5E71A00DC1337 /* XCBaseChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FBEA481CE5E71A00DC1337 /* XCBaseChannelViewController.m */; };
+		C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CE517A1D1192E1006BC136 /* XCNewsTableViewCell.m */; };
+		C4D3C05F1D2EA4A6007B9803 /* XCBottomNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D3C05E1D2EA4A6007B9803 /* XCBottomNewCell.m */; };
+		C4D3C0621D2EAEA0007B9803 /* XCRightExtenController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D3C0611D2EAEA0007B9803 /* XCRightExtenController.m */; };
+		C4D3C0651D2EB4D1007B9803 /* XCRightVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D3C0641D2EB4D1007B9803 /* XCRightVideo.m */; };
+		C4F4A15A1D37CD1700E92E24 /* XCSubChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F4A1591D37CD1700E92E24 /* XCSubChannelController.m */; };
+		C4F4A15D1D37DA3400E92E24 /* XCChannelLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F4A15C1D37DA3400E92E24 /* XCChannelLog.m */; };
+		C4FC4A8D1D10387B00300CF6 /* XCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FC4A8C1D10387B00300CF6 /* XCNewsViewController.m */; };
+		C4FC4A901D104D4200300CF6 /* XCNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FC4A8F1D104D4200300CF6 /* XCNewsModel.m */; };
+		C4FD08761D1D6E7300C7AA94 /* XCNewsDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FD08751D1D6E7300C7AA94 /* XCNewsDetialViewController.m */; };
 		FA72B33DBFA6D4A90B696711 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFDA291E697D1D5D67EBCCA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +73,14 @@
 		C42646DD1D08E9370063C3DD /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		C42646DF1D08F88B0063C3DD /* XCBussNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussNewsModel.h; sourceTree = "<group>"; };
 		C42646E01D08F88B0063C3DD /* XCBussNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussNewsModel.m; sourceTree = "<group>"; };
+		C42646E31D08FEBF0063C3DD /* XCLeftBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCLeftBarControl.h; sourceTree = "<group>"; };
+		C42646E41D08FEBF0063C3DD /* XCLeftBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCLeftBarControl.m; sourceTree = "<group>"; };
+		C42646E51D08FEBF0063C3DD /* XCTabBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTabBarControl.h; sourceTree = "<group>"; };
+		C42646E61D08FEBF0063C3DD /* XCTabBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTabBarControl.m; sourceTree = "<group>"; };
+		C42646E71D08FEBF0063C3DD /* XCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTabBarController.h; sourceTree = "<group>"; };
+		C42646E81D08FEBF0063C3DD /* XCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTabBarController.m; sourceTree = "<group>"; };
+		C42646ED1D0908310063C3DD /* XCLeftBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCLeftBarModel.h; sourceTree = "<group>"; };
+		C42646EE1D0908310063C3DD /* XCLeftBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCLeftBarModel.m; sourceTree = "<group>"; };
 		C428F2291CCCE83800E8129B /* 新城商业.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新城商业.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C428F22D1CCCE83800E8129B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C428F2361CCCE83800E8129B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,8 +95,6 @@
 		C428F2531CCCE83800E8129B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C428F2601CCD12AB00E8129B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C428F2611CCD12AB00E8129B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C428F2711CCD227100E8129B /* XCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTabBarController.h; sourceTree = "<group>"; };
-		C428F2721CCD227100E8129B /* XCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTabBarController.m; sourceTree = "<group>"; };
 		C428F2741CCD240400E8129B /* XCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBaseViewController.h; sourceTree = "<group>"; };
 		C428F2751CCD240400E8129B /* XCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBaseViewController.m; sourceTree = "<group>"; };
 		C428F2781CCD247200E8129B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -85,6 +105,10 @@
 		C428F2811CCD255A00E8129B /* XCInduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduViewController.m; sourceTree = "<group>"; };
 		C428F2831CCD256200E8129B /* XCInveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInveViewController.h; sourceTree = "<group>"; };
 		C428F2841CCD256200E8129B /* XCInveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInveViewController.m; sourceTree = "<group>"; };
+		C436D6A81D3254BD00B3822D /* XCBaseChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBaseChannelViewController.h; sourceTree = "<group>"; };
+		C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBaseChannelViewController.m; sourceTree = "<group>"; };
+		C436D6AA1D3254BD00B3822D /* XCChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelViewController.h; sourceTree = "<group>"; };
+		C436D6AB1D3254BD00B3822D /* XCChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelViewController.m; sourceTree = "<group>"; };
 		C44686631CD1FEBC009FF94D /* XCBussViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussViewController.h; sourceTree = "<group>"; };
 		C44686641CD1FEBC009FF94D /* XCBussViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussViewController.m; sourceTree = "<group>"; };
 		C44686651CD1FEBC009FF94D /* XCTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestViewController.h; sourceTree = "<group>"; };
@@ -93,22 +117,40 @@
 		C446866C1CD1FED4009FF94D /* XCBussTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussTableViewCell.m; sourceTree = "<group>"; };
 		C45E640E1CD2154100455AAF /* XCBussCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussCollectionViewCell.h; sourceTree = "<group>"; };
 		C45E640F1CD2154100455AAF /* XCBussCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussCollectionViewCell.m; sourceTree = "<group>"; };
-		C46C3D231CDCE06C0040E9A7 /* XCLeftBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCLeftBarControl.h; sourceTree = "<group>"; };
-		C46C3D241CDCE06C0040E9A7 /* XCLeftBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCLeftBarControl.m; sourceTree = "<group>"; };
+		C4864AE31D2E979800ED1469 /* XCBottonExtenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBottonExtenController.h; sourceTree = "<group>"; };
+		C4864AE41D2E979800ED1469 /* XCBottonExtenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBottonExtenController.m; sourceTree = "<group>"; };
+		C4864AE71D2E979800ED1469 /* XCPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCPlayerViewController.h; sourceTree = "<group>"; };
+		C4864AE81D2E979800ED1469 /* XCPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPlayerViewController.m; sourceTree = "<group>"; };
+		C4864AEE1D2EA03700ED1469 /* XCBottonNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBottonNews.h; sourceTree = "<group>"; };
+		C4864AEF1D2EA03700ED1469 /* XCBottonNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBottonNews.m; sourceTree = "<group>"; };
+		C49651D91D20196A009B4FD5 /* XCNewsDetialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsDetialModel.h; sourceTree = "<group>"; };
+		C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsDetialModel.m; sourceTree = "<group>"; };
 		C4BE58611D070E5800A2A4FA /* XCBussDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussDelegate.h; sourceTree = "<group>"; };
 		C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussDelegate.m; sourceTree = "<group>"; };
 		C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussVideoModel.h; sourceTree = "<group>"; };
 		C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussVideoModel.m; sourceTree = "<group>"; };
-		C4CA73CA1CE0A2800091733B /* XCChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelViewController.h; sourceTree = "<group>"; };
-		C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelViewController.m; sourceTree = "<group>"; };
 		C4CDFDF41D0695C80016E864 /* XCNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNetWorkManager.h; sourceTree = "<group>"; };
 		C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNetWorkManager.m; sourceTree = "<group>"; };
 		C4CDFDF71D069B720016E864 /* XCURLConstantString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCURLConstantString.h; sourceTree = "<group>"; };
 		C4CDFDF81D069B720016E864 /* XCURLConstantString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCURLConstantString.m; sourceTree = "<group>"; };
-		C4D576491CD0DD2E00115620 /* XCTabBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTabBarControl.h; sourceTree = "<group>"; };
-		C4D5764A1CD0DD2E00115620 /* XCTabBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTabBarControl.m; sourceTree = "<group>"; };
-		C4FBEA471CE5E71A00DC1337 /* XCBaseChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBaseChannelViewController.h; sourceTree = "<group>"; };
-		C4FBEA481CE5E71A00DC1337 /* XCBaseChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBaseChannelViewController.m; sourceTree = "<group>"; };
+		C4CE51791D1192E1006BC136 /* XCNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsTableViewCell.h; sourceTree = "<group>"; };
+		C4CE517A1D1192E1006BC136 /* XCNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsTableViewCell.m; sourceTree = "<group>"; };
+		C4D3C05D1D2EA4A6007B9803 /* XCBottomNewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBottomNewCell.h; sourceTree = "<group>"; };
+		C4D3C05E1D2EA4A6007B9803 /* XCBottomNewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBottomNewCell.m; sourceTree = "<group>"; };
+		C4D3C0601D2EAEA0007B9803 /* XCRightExtenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRightExtenController.h; sourceTree = "<group>"; };
+		C4D3C0611D2EAEA0007B9803 /* XCRightExtenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRightExtenController.m; sourceTree = "<group>"; };
+		C4D3C0631D2EB4D1007B9803 /* XCRightVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRightVideo.h; sourceTree = "<group>"; };
+		C4D3C0641D2EB4D1007B9803 /* XCRightVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRightVideo.m; sourceTree = "<group>"; };
+		C4F4A1581D37CD1700E92E24 /* XCSubChannelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCSubChannelController.h; sourceTree = "<group>"; };
+		C4F4A1591D37CD1700E92E24 /* XCSubChannelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCSubChannelController.m; sourceTree = "<group>"; };
+		C4F4A15B1D37DA3400E92E24 /* XCChannelLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelLog.h; sourceTree = "<group>"; };
+		C4F4A15C1D37DA3400E92E24 /* XCChannelLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelLog.m; sourceTree = "<group>"; };
+		C4FC4A8B1D10387B00300CF6 /* XCNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsViewController.h; sourceTree = "<group>"; };
+		C4FC4A8C1D10387B00300CF6 /* XCNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsViewController.m; sourceTree = "<group>"; };
+		C4FC4A8E1D104D4200300CF6 /* XCNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsModel.h; sourceTree = "<group>"; };
+		C4FC4A8F1D104D4200300CF6 /* XCNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsModel.m; sourceTree = "<group>"; };
+		C4FD08741D1D6E7300C7AA94 /* XCNewsDetialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsDetialViewController.h; sourceTree = "<group>"; };
+		C4FD08751D1D6E7300C7AA94 /* XCNewsDetialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsDetialViewController.m; sourceTree = "<group>"; };
 		C89AD06C6A8E4282375C9663 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FD81F3C559D045D424660397 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +205,35 @@
 				C42646DD1D08E9370063C3DD /* NSArray+Log.m */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		C42646E21D08FEBF0063C3DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C42646E31D08FEBF0063C3DD /* XCLeftBarControl.h */,
+				C42646E41D08FEBF0063C3DD /* XCLeftBarControl.m */,
+				C42646E51D08FEBF0063C3DD /* XCTabBarControl.h */,
+				C42646E61D08FEBF0063C3DD /* XCTabBarControl.m */,
+				C42646E71D08FEBF0063C3DD /* XCTabBarController.h */,
+				C42646E81D08FEBF0063C3DD /* XCTabBarController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C42646E91D08FEBF0063C3DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C42646ED1D0908310063C3DD /* XCLeftBarModel.h */,
+				C42646EE1D0908310063C3DD /* XCLeftBarModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C42646F01D090FE00063C3DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C428F2201CCCE83800E8129B = {
@@ -234,6 +305,8 @@
 				C428F2691CCD12AB00E8129B /* Main */,
 				C428F26A1CCD12AB00E8129B /* Tools */,
 				C428F2621CCD12AB00E8129B /* Basic(基类) */,
+				C4FC4A831D10381300300CF6 /* NeswPlayer */,
+				C4FC4A871D10381300300CF6 /* VideoPlayer */,
 				C428F2651CCD12AB00E8129B /* Business(新城商业) */,
 				C428F2661CCD12AB00E8129B /* Database(数据库) */,
 				C428F2671CCD12AB00E8129B /* Industry(行业矩阵) */,
@@ -298,12 +371,9 @@
 		C428F2691CCD12AB00E8129B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C4D576491CD0DD2E00115620 /* XCTabBarControl.h */,
-				C4D5764A1CD0DD2E00115620 /* XCTabBarControl.m */,
-				C46C3D231CDCE06C0040E9A7 /* XCLeftBarControl.h */,
-				C46C3D241CDCE06C0040E9A7 /* XCLeftBarControl.m */,
-				C428F2711CCD227100E8129B /* XCTabBarController.h */,
-				C428F2721CCD227100E8129B /* XCTabBarController.m */,
+				C42646E21D08FEBF0063C3DD /* Controllers */,
+				C42646E91D08FEBF0063C3DD /* Models */,
+				C42646F01D090FE00063C3DD /* Views */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -324,6 +394,35 @@
 				C428F2781CCD247200E8129B /* PrefixHeader.pch */,
 			);
 			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		C436D6A71D3254BD00B3822D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C436D6AA1D3254BD00B3822D /* XCChannelViewController.h */,
+				C436D6AB1D3254BD00B3822D /* XCChannelViewController.m */,
+				C436D6A81D3254BD00B3822D /* XCBaseChannelViewController.h */,
+				C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */,
+				C4F4A1581D37CD1700E92E24 /* XCSubChannelController.h */,
+				C4F4A1591D37CD1700E92E24 /* XCSubChannelController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C436D6AC1D3254BD00B3822D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4F4A15B1D37DA3400E92E24 /* XCChannelLog.h */,
+				C4F4A15C1D37DA3400E92E24 /* XCChannelLog.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C436D6AD1D3254BD00B3822D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C44686621CD1FEBC009FF94D /* Controller */ = {
@@ -361,13 +460,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C4864AE21D2E979800ED1469 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4864AE71D2E979800ED1469 /* XCPlayerViewController.h */,
+				C4864AE81D2E979800ED1469 /* XCPlayerViewController.m */,
+				C4864AE31D2E979800ED1469 /* XCBottonExtenController.h */,
+				C4864AE41D2E979800ED1469 /* XCBottonExtenController.m */,
+				C4D3C0601D2EAEA0007B9803 /* XCRightExtenController.h */,
+				C4D3C0611D2EAEA0007B9803 /* XCRightExtenController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4864AE91D2E979800ED1469 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4864AEE1D2EA03700ED1469 /* XCBottonNews.h */,
+				C4864AEF1D2EA03700ED1469 /* XCBottonNews.m */,
+				C4D3C0631D2EB4D1007B9803 /* XCRightVideo.h */,
+				C4D3C0641D2EB4D1007B9803 /* XCRightVideo.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4864AEA1D2E979800ED1469 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4D3C05D1D2EA4A6007B9803 /* XCBottomNewCell.h */,
+				C4D3C05E1D2EA4A6007B9803 /* XCBottomNewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C4CA73C91CE0A1350091733B /* Channel(频道) */ = {
 			isa = PBXGroup;
 			children = (
-				C4CA73CA1CE0A2800091733B /* XCChannelViewController.h */,
-				C4CA73CB1CE0A2800091733B /* XCChannelViewController.m */,
-				C4FBEA471CE5E71A00DC1337 /* XCBaseChannelViewController.h */,
-				C4FBEA481CE5E71A00DC1337 /* XCBaseChannelViewController.m */,
+				C436D6A71D3254BD00B3822D /* Controllers */,
+				C436D6AC1D3254BD00B3822D /* Models */,
+				C436D6AD1D3254BD00B3822D /* Views */,
 			);
 			name = "Channel(频道)";
 			path = Channel;
@@ -382,6 +513,57 @@
 				C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */,
 			);
 			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		C4FC4A831D10381300300CF6 /* NeswPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C4FC4A841D10381300300CF6 /* Controllers */,
+				C4FC4A851D10381300300CF6 /* Models */,
+				C4FC4A861D10381300300CF6 /* Views */,
+			);
+			path = NeswPlayer;
+			sourceTree = "<group>";
+		};
+		C4FC4A841D10381300300CF6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4FC4A8B1D10387B00300CF6 /* XCNewsViewController.h */,
+				C4FC4A8C1D10387B00300CF6 /* XCNewsViewController.m */,
+				C4FD08741D1D6E7300C7AA94 /* XCNewsDetialViewController.h */,
+				C4FD08751D1D6E7300C7AA94 /* XCNewsDetialViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4FC4A851D10381300300CF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4FC4A8E1D104D4200300CF6 /* XCNewsModel.h */,
+				C4FC4A8F1D104D4200300CF6 /* XCNewsModel.m */,
+				C49651D91D20196A009B4FD5 /* XCNewsDetialModel.h */,
+				C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4FC4A861D10381300300CF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4CE51791D1192E1006BC136 /* XCNewsTableViewCell.h */,
+				C4CE517A1D1192E1006BC136 /* XCNewsTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4FC4A871D10381300300CF6 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C4864AE21D2E979800ED1469 /* Controllers */,
+				C4864AE91D2E979800ED1469 /* Models */,
+				C4864AEA1D2E979800ED1469 /* Views */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,27 +748,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4CA73CC1CE0A2800091733B /* XCChannelViewController.m in Sources */,
+				C4F4A15D1D37DA3400E92E24 /* XCChannelLog.m in Sources */,
+				C42646EC1D08FEBF0063C3DD /* XCTabBarController.m in Sources */,
+				C42646EF1D0908310063C3DD /* XCLeftBarModel.m in Sources */,
 				C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */,
+				C4FC4A901D104D4200300CF6 /* XCNewsModel.m in Sources */,
+				C4864AEB1D2E979800ED1469 /* XCBottonExtenController.m in Sources */,
+				C4D3C05F1D2EA4A6007B9803 /* XCBottomNewCell.m in Sources */,
+				C436D6AF1D3254BD00B3822D /* XCChannelViewController.m in Sources */,
+				C436D6AE1D3254BD00B3822D /* XCBaseChannelViewController.m in Sources */,
 				C446866D1CD1FED4009FF94D /* XCBussTableViewCell.m in Sources */,
 				C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */,
+				C4864AED1D2E979800ED1469 /* XCPlayerViewController.m in Sources */,
+				C42646EB1D08FEBF0063C3DD /* XCTabBarControl.m in Sources */,
 				C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */,
+				C4FC4A8D1D10387B00300CF6 /* XCNewsViewController.m in Sources */,
 				C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */,
 				C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */,
-				C46C3D251CDCE06C0040E9A7 /* XCLeftBarControl.m in Sources */,
-				C4D5764B1CD0DD2E00115620 /* XCTabBarControl.m in Sources */,
 				C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */,
+				C4FD08761D1D6E7300C7AA94 /* XCNewsDetialViewController.m in Sources */,
+				C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */,
 				C446866A1CD1FEBC009FF94D /* XCTestViewController.m in Sources */,
-				C4FBEA491CE5E71A00DC1337 /* XCBaseChannelViewController.m in Sources */,
+				C4D3C0621D2EAEA0007B9803 /* XCRightExtenController.m in Sources */,
 				C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */,
 				C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */,
 				C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */,
 				C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */,
 				C42646E11D08F88B0063C3DD /* XCBussNewsModel.m in Sources */,
-				C428F2731CCD227100E8129B /* XCTabBarController.m in Sources */,
+				C4D3C0651D2EB4D1007B9803 /* XCRightVideo.m in Sources */,
+				C4F4A15A1D37CD1700E92E24 /* XCSubChannelController.m in Sources */,
+				C4864AF01D2EA03700ED1469 /* XCBottonNews.m in Sources */,
 				C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */,
+				C42646EA1D08FEBF0063C3DD /* XCLeftBarControl.m in Sources */,
 				C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */,
 				C428F22E1CCCE83800E8129B /* main.m in Sources */,
+				C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

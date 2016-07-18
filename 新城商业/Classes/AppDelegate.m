@@ -20,6 +20,8 @@
 	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 	
 	[self setWindow];
+	
+	[self loadBaseData];
 	return YES;
 }
 
@@ -32,6 +34,15 @@
 	[self.window makeKeyAndVisible];
 }
 
+- (void)loadBaseData {
+	[XCLeftBarModel loadModelsuccess:^(NSArray *models) {
+		[XCLeftBarControl sharedLeftBarControl].channels = models;
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		NSLog(@"XCLeftBarControl 失败: %@", error);
+	}];
+}
+
+#pragma mark -
 - (void)applicationWillResignActive:(UIApplication *)application {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 	// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

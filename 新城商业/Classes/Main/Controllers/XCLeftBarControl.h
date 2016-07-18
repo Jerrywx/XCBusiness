@@ -29,6 +29,11 @@
 @property (nonatomic, weak) id<XCLeftBarControlDelegate> delegate;
 
 /**
+ *  数据源
+ */
+@property (nonatomic, strong) NSArray *channels;
+
+/**
  *  创建侧滑列表单粒
  *
  *  @return 返回侧滑列表

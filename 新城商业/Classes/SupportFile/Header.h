@@ -21,6 +21,10 @@
 #import "XCTabBarControl.h"
 #import "XCLeftBarControl.h"
 
+// 播放器界面
+#import "XCPlayerViewController.h"
+#import "XCNewsViewController.h"
+
 // 频道详情
 #import "XCChannelViewController.h"
 
@@ -34,6 +38,8 @@
 #import "XCBussDelegate.h"
 #import "XCBussVideoModel.h"
 #import "XCBussNewsModel.h"
+
+#import "XCLeftBarModel.h"
 
 // 第三方框架
 #import <Masonry.h>

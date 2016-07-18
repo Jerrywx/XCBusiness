@@ -140,7 +140,9 @@
 #pragma mark - XCLeftBarControlDelegate
 - (void)leftBarCellDidSelected:(NSIndexPath *)index model:(id)model {
 	XCChannelViewController *channel = [[XCChannelViewController alloc] init];
-	channel.backTitle = self.collectionLabel.text;
+	channel.channels				 = [XCLeftBarControl sharedLeftBarControl].channels;
+	channel.backTitle				 = self.collectionLabel.text;
+	channel.index					 = index.row;
 	[self.navigationController pushViewController:channel animated:YES];
 }
 

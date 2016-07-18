@@ -36,7 +36,9 @@
 	
 	// 2. 设置 cell
 	cell.backgroundColor = [UIColor colorWithRed:0.25f green:0.24f blue:0.29f alpha:1.00f];
-	cell.model = self.videoModels[indexPath.row];
+	if (self.videoModels.count > 0) {
+		cell.model = self.videoModels[indexPath.row];
+	}
 	
 	// 3. 返回 cell
 	return cell;
@@ -45,6 +47,10 @@
 #pragma mark - UITableViewDelegaet
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	XCBussVideoModel *model = self.videoModels[indexPath.row];
+	XCPlayerViewController *playerVC = [[XCPlayerViewController alloc] init];
+	playerVC.model = model;
+	[self.owner.navigationController pushViewController:playerVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,13 +77,51 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
 	XCBussCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collection" forIndexPath:indexPath];
-	cell.model = self.newsModels[indexPath.row];
+	if (self.newsModels.count > 0) {
+		cell.model = self.newsModels[indexPath.row];
+		[cell clearColor];
+	} else {
+		[cell setColor];
+	}
+	
 	return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"---------- %@", indexPath);
+	
+	XCBussNewsModel *model = self.newsModels[indexPath.row];
+	
+	NSInteger type = [model.nvg_t integerValue];
+	
+	switch (type) {
+		case 1: {
+			XCNewsViewController *newVC = [[XCNewsViewController alloc] init];
+			newVC.model = model;
+			[self.owner.navigationController pushViewController:newVC animated:YES];
+		}
+			break;
+		case 2: {
+			XCPlayerViewController *playerVC = [[XCPlayerViewController alloc] init];
+			playerVC.newsModel = model;
+			[self.owner.navigationController pushViewController:playerVC animated:YES];
+		}
+			break;
+		case 3:{
+			
+		}
+			break;
+			
+		default:
+			break;
+	}
+	
+	
+}
+
+- (NSString *)getVideoUrl:(NSString *)html {
+	
+	return nil;
 }
 
 @end

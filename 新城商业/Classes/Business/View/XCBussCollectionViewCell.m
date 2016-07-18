@@ -70,4 +70,17 @@
 	self.infoLabel.text = [NSString stringWithFormat:@"%@ | %@", model.in_cn, model.date];
 }
 
+
+- (void)setColor {
+	self.imgView.backgroundColor	= [UIColor lightGrayColor];
+	self.titleLabel.backgroundColor = [UIColor darkGrayColor];
+	self.infoLabel.backgroundColor	= [UIColor grayColor];
+}
+
+- (void)clearColor {
+	self.imgView.backgroundColor	= [UIColor clearColor];
+	self.titleLabel.backgroundColor = [UIColor clearColor];
+	self.infoLabel.backgroundColor	= [UIColor clearColor];
+}
+
 @end

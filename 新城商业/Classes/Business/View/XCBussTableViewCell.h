@@ -10,6 +10,11 @@
 
 @interface XCBussTableViewCell : UITableViewCell
 
+/**
+ *  模型对象
+ */
 @property (nonatomic, strong) XCBussVideoModel	*model;
+
+
 
 @end

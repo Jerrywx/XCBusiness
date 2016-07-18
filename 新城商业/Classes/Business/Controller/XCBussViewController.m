@@ -33,6 +33,7 @@
 	self.tableLabel.text		= @"《新城商业》节目";
 	self.collectionLabel.text	= @"新城商业";
 	self.delegate = [[XCBussDelegate alloc] init];
+	self.delegate.owner = self;
 	
 	// 2. tableView
 	self.tableView = ({
@@ -40,7 +41,6 @@
 															   style:UITableViewStyleGrouped];
 		tableView.delegate		= self.delegate;
 		tableView.dataSource	= self.delegate;
-//		tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
 		[self.view addSubview:tableView];
 		tableView;
 	});
@@ -49,9 +49,9 @@
 	self.collectionView = ({
 		UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(XCTLIN_X, 44, SCREEN_W - XCTLIN_X, SCREEN_H - 44)
 															  collectionViewLayout:self.layout];
-		collectionView.dataSource	= self.delegate;
-		collectionView.delegate		= self.delegate;
-		collectionView.backgroundColor = [UIColor whiteColor];
+		collectionView.dataSource		= self.delegate;
+		collectionView.delegate			= self.delegate;
+		collectionView.backgroundColor	= [UIColor whiteColor];
 		[collectionView registerClass:[XCBussCollectionViewCell class] forCellWithReuseIdentifier:@"collection"];
 		[self.view addSubview:collectionView];
 		collectionView;
@@ -71,7 +71,6 @@
 - (void)loadDataNews {
 	//
 	[XCBussNewsModel loadWithURL:nil success:^(NSMutableArray *models) {
-		NSLog(@"数据: %@", models);
 		self.newsModels = models;
 		[self.collectionView.mj_header endRefreshing];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -82,7 +81,6 @@
 
 - (void)loadDataVideos {
 	[XCBussVideoModel loadWithURL:nil success:^(NSMutableArray *models) {
-		NSLog(@"数据-----: %@", models);
 		self.videoModels = models;
 		self.delegate.videoModels = models;
 		[self.tableView reloadData];
@@ -102,9 +100,6 @@
 #pragma mark -
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 	
-	NSLog(@"------------------------ %zd", self.tabBarController.selectedIndex);	
-//	XCTestViewController *test = [[XCTestViewController alloc] init];
-//	[self.navigationController pushViewController:test animated:YES];
 }
 
 #pragma mark - Layzing Loading
@@ -117,13 +112,21 @@
 	CGFloat itemW = (SCREEN_W - XCTLIN_X - 30) * 0.5;
 	CGFloat itemH = (11 / 14.0) * itemW;
 	
-	_layout = [[UICollectionViewFlowLayout alloc] init];
-	_layout.minimumLineSpacing = 10;
+	_layout							= [[UICollectionViewFlowLayout alloc] init];
+	_layout.itemSize				= CGSizeMake(itemW, itemH);
+	_layout.sectionInset			= UIEdgeInsetsMake(10, 10, 10, 10);
+	_layout.minimumLineSpacing		= 10;
 	_layout.minimumInteritemSpacing = 10;
-	_layout.itemSize = CGSizeMake(itemW, itemH);
-	_layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
 	
 	return _layout;
 }
 
 @end
+
+
+
+
+
+
+
+

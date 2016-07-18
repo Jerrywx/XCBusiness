@@ -9,7 +9,6 @@
 #import "XCLeftBarControl.h"
 
 @interface XCLeftBarControl () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) UIView		*bgView;
 @property (nonatomic, strong) UITableView	*leftTableView;
 @end
 
@@ -28,18 +27,13 @@
 	if (self = [super initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)]) {
 		// 1. 创建 背景View
 		self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
-//		self.bgView = ({
-//			UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
-//			view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
-//			[self addSubview:view];
-//			view;
-//		});
 		// 2. 添加左侧列表
 		self.leftTableView = ({
 			UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(-XCLEFT_W, 0, XCLEFT_W, SCREEN_H)
 																  style:UITableViewStyleGrouped];
 			tableView.delegate	   = self;
 			tableView.dataSource   = self;
+			tableView.backgroundColor = [UIColor blackColor];
 			[self addSubview:tableView];
 			tableView;
 		});
@@ -70,13 +64,18 @@
 	[self leftBarControlDisAppear];
 }
 
+- (void)setChannels:(NSArray *)channels {
+	_channels = channels;
+	[self.leftTableView reloadData];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 10;
+	return self.channels.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,7 +84,8 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"leftCell"];
 	}
 	
-	cell.textLabel.text = @"text - cell";
+	NSDictionary *dict = self.channels[indexPath.row];
+	cell.textLabel.text = dict[@"in_cn"];
 	
 	return cell;
 }
@@ -100,6 +100,14 @@
 	if ([self.delegate respondsToSelector:@selector(leftBarCellDidSelected:model:)]) {
 		[self.delegate leftBarCellDidSelected:indexPath model:nil];
 	}
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return XCLEFT_W;
 }
 
 @end

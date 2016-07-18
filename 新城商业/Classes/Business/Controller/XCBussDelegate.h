@@ -13,6 +13,11 @@
 								UICollectionViewDataSource, UICollectionViewDelegate>
 
 /**
+ *  所属控制器
+ */
+@property (nonatomic, weak) XCBussViewController *owner;
+
+/**
  *  左侧视频列表模型
  */
 @property (nonatomic, strong) NSArray *videoModels;

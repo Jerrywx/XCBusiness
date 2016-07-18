@@ -15,9 +15,8 @@
 			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
 	[[XCNetWorkManager shareManager] postWithURL:@"http://api.xincheng.tv/api/getv_b/" parameters:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-		
-		 NSInteger code = [responseObject[@"errorcode"] integerValue];
-		
+
+		NSInteger code = [responseObject[@"errorcode"] integerValue];
 		 if (code == 1000) {
 			 NSArray *datas = responseObject[@"data"];
 			 NSMutableArray *models = [NSMutableArray arrayWithCapacity:datas.count];
@@ -37,7 +36,6 @@
 		failure(task, error);
 	 }];
 }
-
 
 - (NSString *)description {
 	return [NSString stringWithFormat:@"%@ - %@", self.vb_title, self.vb_logo];
