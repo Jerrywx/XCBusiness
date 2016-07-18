@@ -24,6 +24,7 @@
 		C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F27E1CCD255000E8129B /* XCDataViewController.m */; };
 		C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2811CCD255A00E8129B /* XCInduViewController.m */; };
 		C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2841CCD256200E8129B /* XCInveViewController.m */; };
+		C4320B4F1D3D1734003E08AB /* XCChannelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4320B4E1D3D1734003E08AB /* XCChannelHeaderView.m */; };
 		C436D6AE1D3254BD00B3822D /* XCBaseChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */; };
 		C436D6AF1D3254BD00B3822D /* XCChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D6AB1D3254BD00B3822D /* XCChannelViewController.m */; };
 		C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44686641CD1FEBC009FF94D /* XCBussViewController.m */; };
@@ -105,6 +106,8 @@
 		C428F2811CCD255A00E8129B /* XCInduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduViewController.m; sourceTree = "<group>"; };
 		C428F2831CCD256200E8129B /* XCInveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInveViewController.h; sourceTree = "<group>"; };
 		C428F2841CCD256200E8129B /* XCInveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInveViewController.m; sourceTree = "<group>"; };
+		C4320B4D1D3D1734003E08AB /* XCChannelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelHeaderView.h; sourceTree = "<group>"; };
+		C4320B4E1D3D1734003E08AB /* XCChannelHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelHeaderView.m; sourceTree = "<group>"; };
 		C436D6A81D3254BD00B3822D /* XCBaseChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBaseChannelViewController.h; sourceTree = "<group>"; };
 		C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBaseChannelViewController.m; sourceTree = "<group>"; };
 		C436D6AA1D3254BD00B3822D /* XCChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelViewController.h; sourceTree = "<group>"; };
@@ -396,6 +399,15 @@
 			path = SupportFile;
 			sourceTree = "<group>";
 		};
+		C4320B4C1D3D16F7003E08AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4320B4D1D3D1734003E08AB /* XCChannelHeaderView.h */,
+				C4320B4E1D3D1734003E08AB /* XCChannelHeaderView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C436D6A71D3254BD00B3822D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,13 +428,6 @@
 				C4F4A15C1D37DA3400E92E24 /* XCChannelLog.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		C436D6AD1D3254BD00B3822D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		C44686621CD1FEBC009FF94D /* Controller */ = {
@@ -498,7 +503,7 @@
 			children = (
 				C436D6A71D3254BD00B3822D /* Controllers */,
 				C436D6AC1D3254BD00B3822D /* Models */,
-				C436D6AD1D3254BD00B3822D /* Views */,
+				C4320B4C1D3D16F7003E08AB /* Views */,
 			);
 			name = "Channel(频道)";
 			path = Channel;
@@ -780,6 +785,7 @@
 				C4864AF01D2EA03700ED1469 /* XCBottonNews.m in Sources */,
 				C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */,
 				C42646EA1D08FEBF0063C3DD /* XCLeftBarControl.m in Sources */,
+				C4320B4F1D3D1734003E08AB /* XCChannelHeaderView.m in Sources */,
 				C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */,
 				C428F22E1CCCE83800E8129B /* main.m in Sources */,
 				C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */,

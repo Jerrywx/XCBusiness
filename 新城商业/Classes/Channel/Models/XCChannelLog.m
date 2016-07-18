@@ -10,9 +10,8 @@
 
 @implementation XCChannelLog
 
-
-
-+ (void)loadData {
++ (void)loadDataSuccess:(void (^)(NSMutableArray *models))success
+				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
 	NSDictionary *param = @{@"in_id" : @"23",
 							@"kt_id" : @"10"};

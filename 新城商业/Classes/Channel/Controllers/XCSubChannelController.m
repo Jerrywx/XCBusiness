@@ -9,12 +9,15 @@
 #import "XCSubChannelController.h"
 #import "XCBussNewsModel.h"
 #import "XCChannelLog.h"
+#import "XCChannelHeaderView.h"
 
 @interface XCSubChannelController () <UITableViewDelegate, UITableViewDataSource,
 									UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UITableView			*tableView;
 @property (nonatomic, strong) UICollectionView		*collectionView;
 @property (nonatomic, strong) UIView				*lineView;
+@property (nonatomic, strong) XCChannelHeaderView	*headerView;
+
 
 @property (nonatomic, strong) UICollectionViewFlowLayout	*layout;			// 布局
 @property (nonatomic, strong) NSMutableArray				*newsModels;		// 新闻模型 (右侧)
@@ -39,9 +42,10 @@
 	self.tableView = ({
 		UITableView *tableView	= [[UITableView alloc] initWithFrame:CGRectMake(0, 0, XCTLIN_X, SCREEN_H - 44)
 															   style:UITableViewStylePlain];
-		tableView.delegate		= self;
-		tableView.dataSource	= self;
-		tableView.rowHeight		= TABLECELL_H;
+		tableView.delegate			= self;
+		tableView.dataSource		= self;
+		tableView.rowHeight			= TABLECELL_H;
+		tableView.tableHeaderView	= self.headerView;
 		[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"channelCell"];
 		[self.view addSubview:tableView];
 		tableView;
@@ -85,7 +89,12 @@
 	if (self.logModels.count != 0) return;
 	
 	// 4. 加载目录数据
-	[XCChannelLog loadData];
+	[XCChannelLog loadDataSuccess:^(NSMutableArray *models) {
+		self.logModels = models.copy;
+		[self.tableView reloadData];
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		
+	}];
 }
 
 #pragma mark - UIViewController Methond
@@ -148,6 +157,17 @@
 	_layout.minimumInteritemSpacing = 10;
 
 	return _layout;
+}
+
+- (XCChannelHeaderView *)headerView {
+	
+	if (_headerView) {
+		return _headerView;
+	}
+	
+	_headerView = [[XCChannelHeaderView alloc] initWithFrame:CGRectMake(0, 0, XCTLIN_X, 80)];
+	
+	return _headerView;
 }
 
 @end

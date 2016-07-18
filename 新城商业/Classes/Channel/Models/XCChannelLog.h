@@ -47,6 +47,7 @@
 @property (nonatomic, strong) NSString	*channel_name;
 @property (nonatomic, strong) NSArray	*keywords;
 
-+ (void)loadData;
++ (void)loadDataSuccess:(void (^)(NSMutableArray *models))success
+				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end
