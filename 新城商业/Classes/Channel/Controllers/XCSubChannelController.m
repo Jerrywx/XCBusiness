@@ -10,9 +10,11 @@
 #import "XCBussNewsModel.h"
 #import "XCChannelLog.h"
 #import "XCChannelHeaderView.h"
+#import "XCChannelCell.h"
 
 @interface XCSubChannelController () <UITableViewDelegate, UITableViewDataSource,
-									UICollectionViewDelegate, UICollectionViewDataSource>
+									UICollectionViewDelegate, UICollectionViewDataSource,
+									XCChannelCellDelegate>
 @property (nonatomic, strong) UITableView			*tableView;
 @property (nonatomic, strong) UICollectionView		*collectionView;
 @property (nonatomic, strong) UIView				*lineView;
@@ -21,7 +23,9 @@
 
 @property (nonatomic, strong) UICollectionViewFlowLayout	*layout;			// 布局
 @property (nonatomic, strong) NSMutableArray				*newsModels;		// 新闻模型 (右侧)
-@property (nonatomic, strong) NSMutableArray				*logModels;			// 目录模型 (左侧)
+@property (nonatomic, strong) NSMutableArray<XCChannelLog*>	*logModels;			// 目录模型 (左侧)
+@property (nonatomic, strong) NSMutableArray<NSArray *>		*section;
+@property (nonatomic, strong) NSIndexPath					*indexPath;			//
 
 @end
 
@@ -44,9 +48,9 @@
 															   style:UITableViewStylePlain];
 		tableView.delegate			= self;
 		tableView.dataSource		= self;
-		tableView.rowHeight			= TABLECELL_H;
+//		tableView.rowHeight			= 150;
 		tableView.tableHeaderView	= self.headerView;
-		[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"channelCell"];
+		[tableView registerClass:[XCChannelCell class] forCellReuseIdentifier:@"channelCell"];
 		[self.view addSubview:tableView];
 		tableView;
 	});
@@ -97,6 +101,20 @@
 	}];
 }
 
+- (void)setLogModels:(NSMutableArray *)logModels {
+	_logModels = logModels;
+	
+	self.section = [NSMutableArray arrayWithCapacity:logModels.count];
+	for (XCChannelLog *model in logModels) {
+		
+		NSMutableArray *arrayM = [NSMutableArray array];
+		for (Industry *stry in model.keywords) {
+			[arrayM addObject:stry];
+		}
+		[self.section addObject:arrayM];
+	}
+}
+
 #pragma mark - UIViewController Methond
 - (void)viewWillAppear:(BOOL)animated {
 	NSLog(@"======AAAAA");
@@ -104,16 +122,21 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 1;
+	NSLog(@"=======lll %zd", self.logModels.count);
+	return self.section.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 11;
+	
+	return self.section[section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"channelCell"];
-	cell.textLabel.text   = @"channelCell";
+	XCChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"channelCell"];
+	Industry *stry	= self.section[indexPath.section][indexPath.row];
+	cell.delegate   = self;
+	cell.industry	= stry;
+	cell.index		= indexPath;
 	
 	return cell;
 }
@@ -123,21 +146,43 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	if ([self.indexPath isEqual:indexPath]) {
+		Industry *stry	= self.section[indexPath.section][indexPath.row];
+		CGFloat heigh = 25 + stry.ptpe.count * 25;
+		return heigh;
+	}
+	
+	return 25;
+}
+
+- (void)openCellDetial:(NSIndexPath *)index isOpen:(BOOL)isOpen{
+	
+	if (isOpen) {
+		self.indexPath = index;
+	} else {
+		self.indexPath = [NSIndexPath indexPathForRow:1000 inSection:1000];
+	}
+	
+	[self.tableView reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	return self.newsModels.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	
+
 	XCBussCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"channelIetm"
 																		   forIndexPath:indexPath];
 	cell.model = self.newsModels[indexPath.row];
-//	cell.backgroundColor  = [UIColor colorWithHue:( arc4random() % 256 / 256.0 )
-//									   saturation:( arc4random() % 256 / 256.0 )
-//									   brightness:( arc4random() % 256 / 256.0 ) alpha:1];
-	
 	return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return @"sadsa";
 }
 
 #pragma mark - Lazy Loading
@@ -166,7 +211,7 @@
 	}
 	
 	_headerView = [[XCChannelHeaderView alloc] initWithFrame:CGRectMake(0, 0, XCTLIN_X, 80)];
-	
+
 	return _headerView;
 }
 

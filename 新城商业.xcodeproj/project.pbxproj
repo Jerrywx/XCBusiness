@@ -37,6 +37,7 @@
 		C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */; };
 		C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */; };
 		C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */; };
+		C4CACE3C1D42691F000DF296 /* XCChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CACE3B1D42691F000DF296 /* XCChannelCell.m */; };
 		C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */; };
 		C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFDF81D069B720016E864 /* XCURLConstantString.m */; };
 		C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CE517A1D1192E1006BC136 /* XCNewsTableViewCell.m */; };
@@ -132,6 +133,8 @@
 		C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussDelegate.m; sourceTree = "<group>"; };
 		C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussVideoModel.h; sourceTree = "<group>"; };
 		C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussVideoModel.m; sourceTree = "<group>"; };
+		C4CACE3A1D42691F000DF296 /* XCChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelCell.h; sourceTree = "<group>"; };
+		C4CACE3B1D42691F000DF296 /* XCChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCChannelCell.m; sourceTree = "<group>"; };
 		C4CDFDF41D0695C80016E864 /* XCNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNetWorkManager.h; sourceTree = "<group>"; };
 		C4CDFDF51D0695C80016E864 /* XCNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNetWorkManager.m; sourceTree = "<group>"; };
 		C4CDFDF71D069B720016E864 /* XCURLConstantString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCURLConstantString.h; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 			children = (
 				C4320B4D1D3D1734003E08AB /* XCChannelHeaderView.h */,
 				C4320B4E1D3D1734003E08AB /* XCChannelHeaderView.m */,
+				C4CACE3A1D42691F000DF296 /* XCChannelCell.h */,
+				C4CACE3B1D42691F000DF296 /* XCChannelCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				C42646EF1D0908310063C3DD /* XCLeftBarModel.m in Sources */,
 				C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */,
 				C4FC4A901D104D4200300CF6 /* XCNewsModel.m in Sources */,
+				C4CACE3C1D42691F000DF296 /* XCChannelCell.m in Sources */,
 				C4864AEB1D2E979800ED1469 /* XCBottonExtenController.m in Sources */,
 				C4D3C05F1D2EA4A6007B9803 /* XCBottomNewCell.m in Sources */,
 				C436D6AF1D3254BD00B3822D /* XCChannelViewController.m in Sources */,

@@ -37,6 +37,7 @@
 					indus.ptpe = company.copy;
 				}
 			}
+			success(models);
 		}
 		
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {

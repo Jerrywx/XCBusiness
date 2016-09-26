@@ -49,11 +49,9 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	[XCNewsDetialModel loadDataSuccess:^(NSMutableArray *models, id responseObject) {
-		
 		self.tableNumb = [responseObject[0] allKeys].count;
 		[self.tableView reloadData];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
-		
 	}];
 	
 	[self appeartableView];

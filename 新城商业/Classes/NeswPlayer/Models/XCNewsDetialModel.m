@@ -10,8 +10,8 @@
 
 @implementation XCNewsDetialModel
 
-+ (void)loadDataSuccess:(nullable void (^)(NSMutableArray *models, id responseObject))success
-				failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
++ (void)loadDataSuccess:(void (^)(NSMutableArray *models, id responseObject))success
+				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 
 	NSDictionary *param = @{@"k_id":@"14"};
 	

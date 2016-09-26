@@ -10,8 +10,6 @@
 
 @interface XCBaseViewController () <XCTabBarControlDelegate, XCLeftBarControlDelegate>
 
-@property (nonatomic, strong) UIButton	*menuBtn;								// tabBar 控制按钮
-@property (nonatomic, strong) UIView	*leftView;								// tabBar left View
 @property (nonatomic, strong) UIView	*lineView;								// 分割线
 
 @end
@@ -116,6 +114,15 @@
 		label;
 	});
 	
+}
+
+- (void)hiddenAllNav {
+	
+	self.lineView.hidden		= YES;
+	self.leftView.hidden		= YES;
+	self.tableLabel.hidden		= YES;
+	self.collectionLabel.hidden = YES;
+	self.collectionClass.hidden = YES;
 }
 
 // 自定义 tabBar 控制

@@ -45,7 +45,7 @@
 @property (nonatomic, strong) NSString	*kt_id;
 @property (nonatomic, strong) NSString	*in_cn;
 @property (nonatomic, strong) NSString	*channel_name;
-@property (nonatomic, strong) NSArray	*keywords;
+@property (nonatomic, strong) NSArray<Industry*>	*keywords;
 
 + (void)loadDataSuccess:(void (^)(NSMutableArray *models))success
 				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;

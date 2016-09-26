@@ -10,28 +10,6 @@
 
 @interface XCNewsDetialModel : NSObject
 
-/*
- {
-	status = 1;
-	data = (
-		{
-		k_logo = ;
-		k_city = 美国加利福尼亚州山景市;
-		k_cn = 谷歌;
-		k_en = Google;
-		parent_name = Alphabet;
-		parent_info_des = 谷歌母公司;
-		k_id = 14;
-		info_birth = 1998/09/04;
-		son = (  );
-		founder = ( );
-		invest = ( );
-		}
-	 );
-	errorcode = 1000;
- }
- */
-
 @property (nonatomic, strong) NSString	*k_logo;
 @property (nonatomic, strong) NSString	*k_city;
 @property (nonatomic, strong) NSString	*k_cn;
@@ -44,8 +22,8 @@
 @property (nonatomic, strong) NSArray	*invest;
 @property (nonatomic, strong) NSArray	*founder;
 
-+ (void)loadDataSuccess:(nullable void (^)(NSMutableArray *models, id responseObject))success
-				failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure;
++ (void)loadDataSuccess:(void (^)(NSMutableArray *models, id responseObject))success
+				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end
 
