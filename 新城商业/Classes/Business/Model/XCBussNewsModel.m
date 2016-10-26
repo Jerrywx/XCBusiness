@@ -13,21 +13,19 @@
 + (void)loadWithURL:(NSString *)urlString
 			success:(nullable void (^)(NSMutableArray *models))success
 			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-	NSDictionary *param = @{@"cr_p":@"2"};
 	
-	[[XCNetWorkManager shareManager] postWithURL:@"http://api.xincheng.tv/api/getcontent/" parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+	NSDictionary *param = @{@"cr_p":@"2"};
+	[[XCNetWorkManager shareManager] postWithURL:_kAPI_BusinessLeftVideo parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
 		
-		NSInteger code = [responseObject[@"errorcode"] integerValue];
-		
-		if (code == 1000) {
-			NSArray *datas = responseObject[@"data"];
-			NSMutableArray *models = [NSMutableArray arrayWithCapacity:datas.count];
+		XCResponse *response = [XCResponse initWithJson:responseObject];
+		if (response.errorcode == XCNetWorkSuccess) {
 			
+			NSArray *datas = response.data;
+			NSMutableArray *models = [NSMutableArray arrayWithCapacity:datas.count];
 			for (NSDictionary *dict in datas) {
 				XCBussNewsModel *model = [XCBussNewsModel mj_objectWithKeyValues:dict];
 				[models addObject:model];
 			}
-			
 			success(models);
 		} else {
 			failure(task, nil);
@@ -41,8 +39,8 @@
 
 
 + (void)loadChannel:(NSString *)urlString
-			success:(nullable void (^)(NSMutableArray *models))success
-			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
+			success:(void (^)(NSMutableArray *models))success
+			failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
 	NSDictionary *param = @{@"cr_p"	:@"2",
 							@"in_id":@"23"};

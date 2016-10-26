@@ -20,7 +20,6 @@
 	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 	
 	[self setWindow];
-	
 	[self loadBaseData];
 	return YES;
 }
@@ -33,12 +32,11 @@
 	self.window.rootViewController = viewVC;
 	[self.window makeKeyAndVisible];
 }
-
+/// 左侧菜单
 - (void)loadBaseData {
 	[XCLeftBarModel loadModelsuccess:^(NSArray *models) {
 		[XCLeftBarControl sharedLeftBarControl].channels = models;
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
-		NSLog(@"XCLeftBarControl 失败: %@", error);
 	}];
 }
 

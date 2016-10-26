@@ -67,7 +67,7 @@
 	[self.collectionView.mj_header beginRefreshing];
 	[self.tableView.mj_header beginRefreshing];
 }
-
+/// 右侧数据
 - (void)loadDataNews {
 	//
 	[XCBussNewsModel loadWithURL:nil success:^(NSMutableArray *models) {
@@ -75,10 +75,9 @@
 		[self.collectionView.mj_header endRefreshing];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		[self.collectionView.mj_header endRefreshing];
-		NSLog(@"失败: %@", error);
 	}];
 }
-
+/// 左侧数据
 - (void)loadDataVideos {
 	[XCBussVideoModel loadWithURL:nil success:^(NSMutableArray *models) {
 		self.videoModels = models;
@@ -87,7 +86,6 @@
 		[self.tableView.mj_header endRefreshing];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		[self.tableView.mj_header endRefreshing];
-		NSLog(@"失败: %@", error);
 	}];
 }
 

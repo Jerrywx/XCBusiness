@@ -17,7 +17,7 @@ NSString * const kChannelKey = @"channelKey";
 	
 	NSDictionary *param = @{@"In_p" : @(0)};
 	
-	[[XCNetWorkManager shareManager] postWithURL:@"http://api.xincheng.tv/api/getchannellist/" parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+	[[XCNetWorkManager shareManager] postWithURL:_kAPI_GetLeftMuen parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
 		NSInteger code = [responseObject[@"errorcode"] integerValue];
 		if (code == 1000) {
 			[self storeChannel:responseObject[@"data"]];
@@ -33,7 +33,6 @@ NSString * const kChannelKey = @"channelKey";
 		} else {
 			failure(task, error);
 		}
-		NSLog(@"数据BAR - 失败");
 	}];
 }
 

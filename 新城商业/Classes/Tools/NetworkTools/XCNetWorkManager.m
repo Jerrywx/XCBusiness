@@ -33,7 +33,7 @@
 		// 1. 网络请求配置
 		NSURLSessionConfiguration *defConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
 		// 2. 创建网络管理对象
-		_sharedSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.xincheng.tv/"]
+		_sharedSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_kAPI_BaseUrl]
 														 sessionConfiguration:defConfig];
 		// 3. 设置网络请求超时时长 20s
 		[[_sharedSessionManager requestSerializer] setTimeoutInterval:20];
@@ -121,18 +121,5 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

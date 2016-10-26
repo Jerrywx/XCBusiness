@@ -10,10 +10,17 @@
 
 @implementation XCURLConstantString
 
-/**
- *  left
- */
-NSString * const _kAPI_GetLeftMuen			=       @"正在获取验证码";
+/// url 基地址
 NSString * const _kAPI_BaseUrl				=       @"www.baidu.com";
+
+/// 左侧菜单
+NSString * const _kAPI_GetLeftMuen			=       @"http://api.xincheng.tv/api/getchannellist/";
+
+/***************************************************************************************************/
+/**												新城商业											  **/
+/***************************************************************************************************/
+/// 左侧 视频
+NSString * const _kAPI_BusinessLeftVideo	=		@"http://api.xincheng.tv/api/getcontent/";
+
 
 @end

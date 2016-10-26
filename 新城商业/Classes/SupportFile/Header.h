@@ -14,6 +14,7 @@
 #import "XCBaseViewController.h"												// 程序 基控制器
 
 // 网络接口 PAI
+#import "XCResponse.h"
 #import "XCNetWorkManager.h"
 #import "XCURLConstantString.h"
 
