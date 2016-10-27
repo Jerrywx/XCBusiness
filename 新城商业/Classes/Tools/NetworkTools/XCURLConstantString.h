@@ -26,5 +26,14 @@ extern NSString * const _kAPI_BaseUrl;
 /// 左侧 视频
 extern NSString * const _kAPI_BusinessLeftVideo;
 
+/// 右侧 数据
+extern NSString * const _kAPI_BusinessRightData;
+
+
+/***************************************************************************************************/
+/**												频道												  **/
+/***************************************************************************************************/
+// 频道目录
+extern NSString * const _kAPI_ChannelMenu;
 
 @end

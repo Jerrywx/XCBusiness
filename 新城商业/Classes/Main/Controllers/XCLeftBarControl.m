@@ -40,7 +40,7 @@
 	}
 	return self;
 }
-
+///
 - (void)leftBarControlAppear {
 	UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
 	[keyWindow addSubview:self];
@@ -95,7 +95,6 @@
 	
 	// 1. 关闭侧滑栏
 	[self leftBarControlDisAppear];
-	
 	// 2. 点击回调
 	if ([self.delegate respondsToSelector:@selector(leftBarCellDidSelected:model:)]) {
 		[self.delegate leftBarCellDidSelected:indexPath model:nil];

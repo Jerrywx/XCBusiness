@@ -15,8 +15,8 @@
 			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
 	NSDictionary *param = @{@"cr_p":@"2"};
-	[[XCNetWorkManager shareManager] postWithURL:_kAPI_BusinessLeftVideo parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-		
+	[[XCNetWorkManager shareManager] postWithURL:_kAPI_BusinessRightData parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+		NSLog(@"右侧数据: %@", responseObject);
 		XCResponse *response = [XCResponse initWithJson:responseObject];
 		if (response.errorcode == XCNetWorkSuccess) {
 			
@@ -45,11 +45,11 @@
 	NSDictionary *param = @{@"cr_p"	:@"2",
 							@"in_id":@"23"};
 	
-	[[XCNetWorkManager shareManager] postWithURL:@"api/getchannellist1/" parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+	[[XCNetWorkManager shareManager] postWithURL:_kAPI_ChannelMenu parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
 		
-		NSInteger code = [responseObject[@"errorcode"] integerValue];
-
-		if (code == 1000) {
+		XCResponse *response = [XCResponse initWithJson:responseObject];
+		
+		if (response.errorcode == XCNetWorkSuccess) {
 			NSArray *datas = responseObject[@"data"];
 			NSMutableArray *models = [NSMutableArray arrayWithCapacity:datas.count];
 			

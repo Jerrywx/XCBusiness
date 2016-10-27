@@ -117,7 +117,7 @@
 
 #pragma mark - UIViewController Methond
 - (void)viewWillAppear:(BOOL)animated {
-	NSLog(@"======AAAAA");
+
 }
 
 #pragma mark - UITableViewDataSource

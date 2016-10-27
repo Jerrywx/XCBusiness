@@ -11,16 +11,26 @@
 @implementation XCURLConstantString
 
 /// url 基地址
-NSString * const _kAPI_BaseUrl				=       @"www.baidu.com";
+NSString * const _kAPI_BaseUrl				=       @"http://api.xincheng.tv/";
 
 /// 左侧菜单
-NSString * const _kAPI_GetLeftMuen			=       @"http://api.xincheng.tv/api/getchannellist/";
+//NSString * const _kAPI_GetLeftMuen			=       @"http://api.xincheng.tv/api/getchannellist/";
+NSString * const _kAPI_GetLeftMuen			=       @"api/getchannellist/";
 
 /***************************************************************************************************/
 /**												新城商业											  **/
 /***************************************************************************************************/
 /// 左侧 视频
-NSString * const _kAPI_BusinessLeftVideo	=		@"http://api.xincheng.tv/api/getcontent/";
+NSString * const _kAPI_BusinessLeftVideo	=		@"api/getv_b/";
 
+/// 右侧 数据
+NSString * const _kAPI_BusinessRightData	=		@"api/getcontent/";
+
+
+/***************************************************************************************************/
+/**												频道												  **/
+/***************************************************************************************************/
+// 频道目录
+NSString * const _kAPI_ChannelMenu			=		@"api/getchannellist1/";
 
 @end
