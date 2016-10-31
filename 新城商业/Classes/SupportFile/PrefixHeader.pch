@@ -32,5 +32,10 @@
 #define TABLECELL_H 70
 #define TABLEICON_H 50
 
+/// 常用字体
+#define _k_XCFont20 [UIFont systemFontOfSize:10]
+#define _k_XCFont24 [UIFont systemFontOfSize:12]
+#define _k_XCFont28 [UIFont systemFontOfSize:14]
+#define _k_XCFont32 [UIFont systemFontOfSize:16]
 
 #endif /* PrefixHeader_pch */

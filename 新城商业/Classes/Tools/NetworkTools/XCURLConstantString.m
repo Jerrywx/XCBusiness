@@ -33,4 +33,17 @@ NSString * const _kAPI_BusinessRightData	=		@"api/getcontent/";
 // 频道目录
 NSString * const _kAPI_ChannelMenu			=		@"api/getchannellist1/";
 
+/// 频道子目录
+NSString * const _kAPI_ChannelSubMenu		=		@"api/getchannellist2/";
+
+/***************************************************************************************************/
+/**												行业矩阵											  **/
+/***************************************************************************************************/
+
+/// 行业矩阵目录页
+NSString * const _kAPI_InduMenu				=		@"/api/getchannellist3/";
+
+// 行业矩阵内容页面
+NSString * const _kAPI_InduData				=		@"/api/getchannellist4/";
+
 @end

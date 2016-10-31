@@ -16,11 +16,11 @@
 	NSDictionary *param = @{@"in_id" : @"23",
 							@"kt_id" : @"10"};
 	
-	[[XCNetWorkManager shareManager] postWithURL:@"api/getchannellist2/" parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-
-		NSInteger code = [responseObject[@"errorcode"] integerValue];
-		if (code == 1000) {
-			
+	[[XCNetWorkManager shareManager] postWithURL:_kAPI_ChannelSubMenu parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+		NSLog(@"%@", responseObject);
+		XCResponse *response = [XCResponse initWithJson:responseObject];
+		
+		if (response.errorcode == XCNetWorkSuccess) {
 			// 1. XCChannelLog 字典转模型
 			NSMutableArray *models = [self mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
 			

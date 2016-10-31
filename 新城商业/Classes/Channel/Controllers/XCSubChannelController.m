@@ -97,7 +97,6 @@
 		self.logModels = models.copy;
 		[self.tableView reloadData];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
-		
 	}];
 }
 
@@ -122,7 +121,6 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	NSLog(@"=======lll %zd", self.logModels.count);
 	return self.section.count;
 }
 

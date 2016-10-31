@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A3F27E7C631C9A8C60799F6 /* libPods-新城商业.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEEEBA4EB8478FC4DEA5081 /* libPods-新城商业.a */; };
 		BE264E76F89FBF4F04DB1D31 /* libPods-新城商业UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1743A6109C8F44949860EA /* libPods-新城商业UITests.a */; };
+		C41165EC1DC701040012F928 /* XCInduHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41165EB1DC701040012F928 /* XCInduHeaderView.m */; };
 		C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646DD1D08E9370063C3DD /* NSArray+Log.m */; };
 		C42646E11D08F88B0063C3DD /* XCBussNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E01D08F88B0063C3DD /* XCBussNewsModel.m */; };
 		C42646EA1D08FEBF0063C3DD /* XCLeftBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646E41D08FEBF0063C3DD /* XCLeftBarControl.m */; };
@@ -24,7 +25,6 @@
 		C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2611CCD12AB00E8129B /* AppDelegate.m */; };
 		C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2751CCD240400E8129B /* XCBaseViewController.m */; };
 		C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F27E1CCD255000E8129B /* XCDataViewController.m */; };
-		C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2811CCD255A00E8129B /* XCInduViewController.m */; };
 		C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2841CCD256200E8129B /* XCInveViewController.m */; };
 		C4320B4F1D3D1734003E08AB /* XCChannelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4320B4E1D3D1734003E08AB /* XCChannelHeaderView.m */; };
 		C436D6AE1D3254BD00B3822D /* XCBaseChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */; };
@@ -33,10 +33,14 @@
 		C446866A1CD1FEBC009FF94D /* XCTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44686661CD1FEBC009FF94D /* XCTestViewController.m */; };
 		C446866D1CD1FED4009FF94D /* XCBussTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C446866C1CD1FED4009FF94D /* XCBussTableViewCell.m */; };
 		C451DE8B1DBF974000B70A4E /* XCConstString.m in Sources */ = {isa = PBXBuildFile; fileRef = C451DE8A1DBF974000B70A4E /* XCConstString.m */; };
+		C4547D361DC6069A00B9840E /* XCIconHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4547D351DC6069A00B9840E /* XCIconHeader.m */; };
+		C4547D391DC608AF00B9840E /* XCInduDetialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4547D381DC608AF00B9840E /* XCInduDetialModel.m */; };
 		C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E640F1CD2154100455AAF /* XCBussCollectionViewCell.m */; };
 		C4864AEB1D2E979800ED1469 /* XCBottonExtenController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864AE41D2E979800ED1469 /* XCBottonExtenController.m */; };
 		C4864AED1D2E979800ED1469 /* XCPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864AE81D2E979800ED1469 /* XCPlayerViewController.m */; };
 		C4864AF01D2EA03700ED1469 /* XCBottonNews.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864AEF1D2EA03700ED1469 /* XCBottonNews.m */; };
+		C49601C01DC396EC0080D51A /* XCInduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49601BD1DC396EC0080D51A /* XCInduViewController.m */; };
+		C49601C31DC3972C0080D51A /* XCXCInduModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49601C21DC3972C0080D51A /* XCXCInduModel.m */; };
 		C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */; };
 		C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */; };
 		C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */; };
@@ -80,6 +84,8 @@
 		4DEEEBA4EB8478FC4DEA5081 /* libPods-新城商业.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-新城商业.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1743A6109C8F44949860EA /* libPods-新城商业UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-新城商业UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C7236CBA8CA5A574626590 /* Pods-新城商业UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新城商业UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-新城商业UITests/Pods-新城商业UITests.release.xcconfig"; sourceTree = "<group>"; };
+		C41165EA1DC701040012F928 /* XCInduHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduHeaderView.h; sourceTree = "<group>"; };
+		C41165EB1DC701040012F928 /* XCInduHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduHeaderView.m; sourceTree = "<group>"; };
 		C42646DC1D08E9370063C3DD /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		C42646DD1D08E9370063C3DD /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		C42646DF1D08F88B0063C3DD /* XCBussNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussNewsModel.h; sourceTree = "<group>"; };
@@ -112,8 +118,6 @@
 		C428F2791CCD24A200E8129B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		C428F27D1CCD255000E8129B /* XCDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDataViewController.h; sourceTree = "<group>"; };
 		C428F27E1CCD255000E8129B /* XCDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDataViewController.m; sourceTree = "<group>"; };
-		C428F2801CCD255A00E8129B /* XCInduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduViewController.h; sourceTree = "<group>"; };
-		C428F2811CCD255A00E8129B /* XCInduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduViewController.m; sourceTree = "<group>"; };
 		C428F2831CCD256200E8129B /* XCInveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInveViewController.h; sourceTree = "<group>"; };
 		C428F2841CCD256200E8129B /* XCInveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInveViewController.m; sourceTree = "<group>"; };
 		C4320B4D1D3D1734003E08AB /* XCChannelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelHeaderView.h; sourceTree = "<group>"; };
@@ -130,6 +134,10 @@
 		C446866C1CD1FED4009FF94D /* XCBussTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussTableViewCell.m; sourceTree = "<group>"; };
 		C451DE891DBF974000B70A4E /* XCConstString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCConstString.h; sourceTree = "<group>"; };
 		C451DE8A1DBF974000B70A4E /* XCConstString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCConstString.m; sourceTree = "<group>"; };
+		C4547D341DC6069A00B9840E /* XCIconHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCIconHeader.h; sourceTree = "<group>"; };
+		C4547D351DC6069A00B9840E /* XCIconHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCIconHeader.m; sourceTree = "<group>"; };
+		C4547D371DC608AF00B9840E /* XCInduDetialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduDetialModel.h; sourceTree = "<group>"; };
+		C4547D381DC608AF00B9840E /* XCInduDetialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduDetialModel.m; sourceTree = "<group>"; };
 		C45E640E1CD2154100455AAF /* XCBussCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussCollectionViewCell.h; sourceTree = "<group>"; };
 		C45E640F1CD2154100455AAF /* XCBussCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussCollectionViewCell.m; sourceTree = "<group>"; };
 		C4864AE31D2E979800ED1469 /* XCBottonExtenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBottonExtenController.h; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 		C4864AE81D2E979800ED1469 /* XCPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPlayerViewController.m; sourceTree = "<group>"; };
 		C4864AEE1D2EA03700ED1469 /* XCBottonNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBottonNews.h; sourceTree = "<group>"; };
 		C4864AEF1D2EA03700ED1469 /* XCBottonNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBottonNews.m; sourceTree = "<group>"; };
+		C49601BC1DC396EC0080D51A /* XCInduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduViewController.h; sourceTree = "<group>"; };
+		C49601BD1DC396EC0080D51A /* XCInduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduViewController.m; sourceTree = "<group>"; };
+		C49601C11DC3972C0080D51A /* XCXCInduModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCXCInduModel.h; sourceTree = "<group>"; };
+		C49601C21DC3972C0080D51A /* XCXCInduModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCXCInduModel.m; sourceTree = "<group>"; };
 		C49651D91D20196A009B4FD5 /* XCNewsDetialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsDetialModel.h; sourceTree = "<group>"; };
 		C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsDetialModel.m; sourceTree = "<group>"; };
 		C4BE58611D070E5800A2A4FA /* XCBussDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussDelegate.h; sourceTree = "<group>"; };
@@ -224,6 +236,15 @@
 				7D1743A6109C8F44949860EA /* libPods-新城商业UITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C41165E91DC700EB0012F928 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C41165EA1DC701040012F928 /* XCInduHeaderView.h */,
+				C41165EB1DC701040012F928 /* XCInduHeaderView.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C42646DB1D08E9370063C3DD /* Log */ = {
@@ -379,8 +400,10 @@
 		C428F2671CCD12AB00E8129B /* Industry(行业矩阵) */ = {
 			isa = PBXGroup;
 			children = (
-				C428F2801CCD255A00E8129B /* XCInduViewController.h */,
-				C428F2811CCD255A00E8129B /* XCInduViewController.m */,
+				C49601BB1DC396EC0080D51A /* Controllers */,
+				C49601BE1DC396EC0080D51A /* Models */,
+				C49601BF1DC396EC0080D51A /* Views */,
+				C41165E91DC700EB0012F928 /* Cells */,
 			);
 			name = "Industry(行业矩阵)";
 			path = Industry;
@@ -523,6 +546,35 @@
 			children = (
 				C4D3C05D1D2EA4A6007B9803 /* XCBottomNewCell.h */,
 				C4D3C05E1D2EA4A6007B9803 /* XCBottomNewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C49601BB1DC396EC0080D51A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C49601BC1DC396EC0080D51A /* XCInduViewController.h */,
+				C49601BD1DC396EC0080D51A /* XCInduViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C49601BE1DC396EC0080D51A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C49601C11DC3972C0080D51A /* XCXCInduModel.h */,
+				C49601C21DC3972C0080D51A /* XCXCInduModel.m */,
+				C4547D371DC608AF00B9840E /* XCInduDetialModel.h */,
+				C4547D381DC608AF00B9840E /* XCInduDetialModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C49601BF1DC396EC0080D51A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4547D341DC6069A00B9840E /* XCIconHeader.h */,
+				C4547D351DC6069A00B9840E /* XCIconHeader.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -867,6 +919,7 @@
 			files = (
 				C4F4A15D1D37DA3400E92E24 /* XCChannelLog.m in Sources */,
 				C42646EC1D08FEBF0063C3DD /* XCTabBarController.m in Sources */,
+				C4547D361DC6069A00B9840E /* XCIconHeader.m in Sources */,
 				C42646EF1D0908310063C3DD /* XCLeftBarModel.m in Sources */,
 				C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */,
 				C4FC4A901D104D4200300CF6 /* XCNewsModel.m in Sources */,
@@ -879,7 +932,6 @@
 				C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */,
 				C4864AED1D2E979800ED1469 /* XCPlayerViewController.m in Sources */,
 				C42646EB1D08FEBF0063C3DD /* XCTabBarControl.m in Sources */,
-				C428F2821CCD255A00E8129B /* XCInduViewController.m in Sources */,
 				C4FC4A8D1D10387B00300CF6 /* XCNewsViewController.m in Sources */,
 				C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */,
 				C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */,
@@ -891,6 +943,8 @@
 				C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */,
 				C44686691CD1FEBC009FF94D /* XCBussViewController.m in Sources */,
 				C45E64101CD2154100455AAF /* XCBussCollectionViewCell.m in Sources */,
+				C49601C31DC3972C0080D51A /* XCXCInduModel.m in Sources */,
+				C4547D391DC608AF00B9840E /* XCInduDetialModel.m in Sources */,
 				C4CDFDF91D069B720016E864 /* XCURLConstantString.m in Sources */,
 				C42646E11D08F88B0063C3DD /* XCBussNewsModel.m in Sources */,
 				C4D3C0651D2EB4D1007B9803 /* XCRightVideo.m in Sources */,
@@ -899,11 +953,13 @@
 				C451DE8B1DBF974000B70A4E /* XCConstString.m in Sources */,
 				C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */,
 				C42646EA1D08FEBF0063C3DD /* XCLeftBarControl.m in Sources */,
+				C49601C01DC396EC0080D51A /* XCInduViewController.m in Sources */,
 				C4320B4F1D3D1734003E08AB /* XCChannelHeaderView.m in Sources */,
 				C4D6D4B01DC10D80002FDDFE /* XCResponse.m in Sources */,
 				C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */,
 				C428F22E1CCCE83800E8129B /* main.m in Sources */,
 				C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */,
+				C41165EC1DC701040012F928 /* XCInduHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

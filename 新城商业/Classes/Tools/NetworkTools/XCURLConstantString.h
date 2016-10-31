@@ -36,4 +36,18 @@ extern NSString * const _kAPI_BusinessRightData;
 // 频道目录
 extern NSString * const _kAPI_ChannelMenu;
 
+/// 频道子目录
+extern NSString * const _kAPI_ChannelSubMenu;
+
+
+/***************************************************************************************************/
+/**												行业矩阵											  **/
+/***************************************************************************************************/
+
+/// 行业矩阵目录页
+extern NSString * const _kAPI_InduMenu;
+
+// 行业矩阵内容页面
+extern NSString * const _kAPI_InduData;
+
 @end
