@@ -9,9 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @class XCInduDetialModel;
+
+@protocol XCInduHeaderViewDelegate <NSObject>
+@optional
+
+- (void)induHeaderViewDidSelected:(XCInduDetialModel *)model;
+
+@end
+
 @interface XCInduHeaderView : UIView
 
 /// 
 @property (nonatomic, strong) XCInduDetialModel *model;
+
+@property (nonatomic, weak) id<XCInduHeaderViewDelegate> delegate;
+
 
 @end

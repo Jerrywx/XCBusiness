@@ -11,10 +11,11 @@
 #import "XCIconHeader.h"
 #import "XCInduDetialModel.h"
 #import "XCInduHeaderView.h"
+#import "XCInduContentCell.h"
 
 #define LOGTAB_W (150)
 
-@interface XCInduViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface XCInduViewController () <UITableViewDelegate, UITableViewDataSource, XCInduHeaderViewDelegate>
 @property (nonatomic, strong) UITableView		*logTableView;
 @property (nonatomic, strong) UITableView		*contentTableView;
 @property (nonatomic, strong) NSArray			*models;
@@ -62,6 +63,7 @@
 															  style:UITableViewStyleGrouped];
 		tableView.delegate		= self;
 		tableView.dataSource	= self;
+		[tableView registerClass:[XCInduContentCell class] forCellReuseIdentifier:@"ccel"];
 		[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 		[self.view addSubview:tableView];
 		tableView;
@@ -77,8 +79,6 @@
 	}];
 	
 	[XCInduDetialModel loadInduSuccess:^(NSArray *log, NSArray *sub) {
-		NSLog(@"model: %@", log);
-		NSLog(@"model: %@", sub);
 		self.models2 = sub;
 		self.logModels2 = log;
 		[self.contentTableView reloadData];
@@ -104,8 +104,12 @@
 	if (tableView == self.logTableView) {
 		return [self.models[section] count];
 	} else if (tableView == self.contentTableView) {
-		return [self.models2[section] count];
-//		return 0;
+		XCInduDetialModel *model = self.logModels2[section];
+		if (model.isOpen) {
+			return [self.models2[section] count];
+		} else {
+			return 0;
+		}
 	} else {
 		return 0;
 	}
@@ -121,10 +125,13 @@
 		return cell;
 		
 	} else {
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-		cell.textLabel.font	= [UIFont systemFontOfSize:12];
-		cell.textLabel.textAlignment = NSTextAlignmentCenter;
-		cell.textLabel.text = [self.models2[indexPath.section][indexPath.row] sc_title];
+//		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//		cell.textLabel.font	= [UIFont systemFontOfSize:12];
+//		cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//		cell.textLabel.text = [self.models2[indexPath.section][indexPath.row] sc_title];
+		
+		XCInduContentCell *cell = [[XCInduContentCell alloc] init];
+		cell.model = self.models2[indexPath.section][indexPath.row];
 		return cell;
 	}
 }
@@ -147,6 +154,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	if (tableView == self.contentTableView) {
 		XCInduHeaderView *view = [[XCInduHeaderView alloc] init];
+		view.delegate = self;
 		view.model = self.logModels2[section];
 		return view;
 	} else {
@@ -172,10 +180,22 @@
 	if (tableView == self.logTableView) {
 		return NAVBAR_H;
 	} else {
-		return 40;
+		NSArray *array = self.models2[indexPath.section];
+		XCDetialModel *model = array[indexPath.row];
+		return model.height;
 	}
 }
 
+#pragma mark - 
+- (void)induHeaderViewDidSelected:(XCInduDetialModel *)model {
+
+	BOOL tip = model.isOpen;
+	for (XCInduDetialModel *model in self.logModels2) {
+		model.isOpen = NO;
+	}
+	model.isOpen = !tip;
+	[self.contentTableView reloadData];
+}
 
 #pragma mark - Getter Methond
 - (XCIconHeader *)header {
@@ -189,27 +209,5 @@
 	return _header;
 }
 
-
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

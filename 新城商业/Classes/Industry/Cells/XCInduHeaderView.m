@@ -38,6 +38,7 @@
 
 static CGFloat height = 80;
 static CGFloat margin = 10;
+static CGFloat margin2 = 8;
 ///
 - (void)setupView {
 	
@@ -79,40 +80,35 @@ static CGFloat margin = 10;
 	///////
 	self.productLabel = ({
 		UILabel *title = [[UILabel alloc] init];
-		[self addSubview:title];
-		title;
-	});
-	
-	///
-	self.technologyLabel = ({
-		UILabel *title = [[UILabel alloc] init];
+		title.font		= _k_XCFont20;
+		title.text		= @"产品:";
 		[self addSubview:title];
 		title;
 	});
 	
 	self.technologyLabel = ({
 		UILabel *title = [[UILabel alloc] init];
+		title.font		= _k_XCFont20;
+		title.text		= @"科技:";
 		[self addSubview:title];
 		title;
 	});
-	
+
 	self.projectLabel = ({
 		UILabel *title = [[UILabel alloc] init];
+		title.font		= _k_XCFont20;
+		title.text		= @"项目:";
 		[self addSubview:title];
 		title;
 	});
 
 	self.personLabel = ({
 		UILabel *title = [[UILabel alloc] init];
+		title.font		= _k_XCFont20;
+		title.text		= @"人物:";
 		[self addSubview:title];
 		title;
 	});
-	
-	///
-//	self.iconImageView.backgroundColor = [UIColor orangeColor];
-//	self.titleLael.backgroundColor = [UIColor orangeColor];
-//	self.summaryLabel.backgroundColor = [UIColor orangeColor];
-//	self.contryLabel.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)layoutViews {
@@ -142,17 +138,52 @@ static CGFloat margin = 10;
 		make.bottom.equalTo(self.contryLabel.mas_top).offset(-margin * 0.5);
 		make.right.equalTo(self.mas_right).offset(-60);
 	}];
+	
+	[self.personLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.right.equalTo(self.mas_right).offset(-margin);
+		make.width.equalTo(@(40));
+		make.height.equalTo(@(10));
+		make.bottom.equalTo(self.mas_bottom).offset(-margin2);
+	}];
+	
+	[self.projectLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.right.equalTo(self.mas_right).offset(-margin);
+		make.width.equalTo(@(40));
+		make.height.equalTo(@(10));
+		make.bottom.equalTo(self.personLabel.mas_top).offset(-margin2);
+	}];
+	
+	[self.technologyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.right.equalTo(self.mas_right).offset(-margin);
+		make.width.equalTo(@(40));
+		make.height.equalTo(@(10));
+		make.bottom.equalTo(self.projectLabel.mas_top).offset(-margin2);
+	}];
+
+	[self.productLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.right.equalTo(self.mas_right).offset(-margin);
+		make.width.equalTo(@(40));
+		make.height.equalTo(@(10));
+		make.bottom.equalTo(self.technologyLabel.mas_top).offset(-margin2);
+	}];
 }
 
 #pragma mark - 
 - (void)setModel:(XCInduDetialModel *)model {
 	_model = model;
 	
-	self.titleLael.text = model.k_cn;
+	[self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.k_logo]
+						  placeholderImage:[UIImage imageNamed:@"kj"]];
 	
+	self.titleLael.text = model.k_cn;
 	self.summaryLabel.text = model.kinfo_one;
 	self.contryLabel.text = @"没股票";  // model.kinfo_country;
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+	if ([self.delegate respondsToSelector:@selector(induHeaderViewDidSelected:)]) {
+		[self.delegate induHeaderViewDidSelected:self.model];
+	}
+}
 
 @end
