@@ -50,8 +50,9 @@
 	
 	// 1. tabBar 控制按钮
 	self.menuBtn = ({
-		UIButton *btn		= [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 70, 10, 60, 30)];
-		btn.backgroundColor = [UIColor blueColor];
+		UIButton *btn		= [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_W - 60, 10, 60, 30)];
+		[btn setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
+//		btn.backgroundColor = [UIColor blueColor];
 		[btn addTarget:self action:@selector(menuControl) forControlEvents:UIControlEventTouchUpInside];
 		btn;
 	});
