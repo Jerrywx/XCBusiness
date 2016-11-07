@@ -28,14 +28,27 @@
 
 @implementation XCInduDetialModel
 
-+ (void)loadInduSuccess:(void (^)(NSArray *log, NSArray *sub))success
-				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
++ (void)loadDataID:(NSString *)IndustryId
+		  classify:(NSString *)classId
+		   Success:(void (^)(NSArray *logd, NSArray *subd, NSString * Id))success
+		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
-	NSDictionary *param = @{@"kt_id" : @"10",
-							@"in_id" : @"49"};
+	[self loadInduID:IndustryId classify:classId Success:^(NSArray *logd, NSArray *subd) {
+		success(logd, subd, IndustryId);
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		failure(task, error);
+	}];
+}
+
++ (void)loadInduID:(NSString *)IndustryId
+		  classify:(NSString *)classId
+		   Success:(void (^)(NSArray *logd, NSArray *subd))success
+		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
+	
+	NSDictionary *param = @{@"kt_id" : classId,
+							@"in_id" : IndustryId};
 
 	[[XCNetWorkManager shareManager] postWithURL:_kAPI_InduData parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-		NSLog(@"==== %@", responseObject);
 		XCResponse *response = [XCResponse initWithJson:responseObject];
 		if (response.errorcode == XCNetWorkSuccess) {
 			NSMutableArray *oneArray = [NSMutableArray array];

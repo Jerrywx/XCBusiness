@@ -12,6 +12,7 @@
 #import "XCInduDetialModel.h"
 #import "XCInduHeaderView.h"
 #import "XCInduContentCell.h"
+#import "XCInduService.h"
 
 #define LOGTAB_W (150)
 
@@ -71,16 +72,23 @@
 }
 
 - (void)loadData {
-	[XCXCInduModel loadInduSuccess:^(NSArray *log, NSArray *sub) {
-		self.models = sub;
-		self.logModels = log;
+
+	[XCInduService loadDataInduID:nil classify:@"10" Success:^(NSArray *log, NSArray *sub, NSArray *log2, NSArray *sub2) {
+		self.models			= sub;
+		self.logModels		= log;
+		self.models2		= sub2;
+		self.logModels2		= log2;
 		[self.logTableView reloadData];
+		[self.contentTableView reloadData];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 	}];
+}
+/// 
+- (void)loadDataWith:(XCXCInduModel *)model {
 	
-	[XCInduDetialModel loadInduSuccess:^(NSArray *log, NSArray *sub) {
-		self.models2 = sub;
-		self.logModels2 = log;
+	[XCInduDetialModel loadDataID:model.in_id classify:@"10" Success:^(NSArray *logd, NSArray *subd, NSString *Id) {
+		self.models2		= subd;
+		self.logModels2		= logd;
 		[self.contentTableView reloadData];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		
@@ -125,11 +133,6 @@
 		return cell;
 		
 	} else {
-//		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//		cell.textLabel.font	= [UIFont systemFontOfSize:12];
-//		cell.textLabel.textAlignment = NSTextAlignmentCenter;
-//		cell.textLabel.text = [self.models2[indexPath.section][indexPath.row] sc_title];
-		
 		XCInduContentCell *cell = [[XCInduContentCell alloc] init];
 		cell.model = self.models2[indexPath.section][indexPath.row];
 		return cell;
@@ -138,7 +141,13 @@
 
 #pragma mark -
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+	if (tableView == self.logTableView) {
+		XCXCInduModel *model = self.models[indexPath.section][indexPath.row];
+		[self loadDataWith:model];
+	} else {
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	}
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

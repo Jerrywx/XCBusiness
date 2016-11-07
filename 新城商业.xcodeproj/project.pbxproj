@@ -43,6 +43,7 @@
 		C49601C01DC396EC0080D51A /* XCInduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49601BD1DC396EC0080D51A /* XCInduViewController.m */; };
 		C49601C31DC3972C0080D51A /* XCXCInduModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49601C21DC3972C0080D51A /* XCXCInduModel.m */; };
 		C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */; };
+		C499AB591DCEDCFB003BCF56 /* XCInduService.m in Sources */ = {isa = PBXBuildFile; fileRef = C499AB581DCEDCFB003BCF56 /* XCInduService.m */; };
 		C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */; };
 		C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */; };
 		C4CACE3C1D42691F000DF296 /* XCChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CACE3B1D42691F000DF296 /* XCChannelCell.m */; };
@@ -155,6 +156,8 @@
 		C49601C21DC3972C0080D51A /* XCXCInduModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCXCInduModel.m; sourceTree = "<group>"; };
 		C49651D91D20196A009B4FD5 /* XCNewsDetialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCNewsDetialModel.h; sourceTree = "<group>"; };
 		C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsDetialModel.m; sourceTree = "<group>"; };
+		C499AB571DCEDCFB003BCF56 /* XCInduService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduService.h; sourceTree = "<group>"; };
+		C499AB581DCEDCFB003BCF56 /* XCInduService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduService.m; sourceTree = "<group>"; };
 		C4BE58611D070E5800A2A4FA /* XCBussDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussDelegate.h; sourceTree = "<group>"; };
 		C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussDelegate.m; sourceTree = "<group>"; };
 		C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussVideoModel.h; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 			children = (
 				C49601BC1DC396EC0080D51A /* XCInduViewController.h */,
 				C49601BD1DC396EC0080D51A /* XCInduViewController.m */,
+				C499AB571DCEDCFB003BCF56 /* XCInduService.h */,
+				C499AB581DCEDCFB003BCF56 /* XCInduService.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -965,6 +970,7 @@
 				C4CDFDF61D0695C80016E864 /* XCNetWorkManager.m in Sources */,
 				C428F22E1CCCE83800E8129B /* main.m in Sources */,
 				C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */,
+				C499AB591DCEDCFB003BCF56 /* XCInduService.m in Sources */,
 				C41165EC1DC701040012F928 /* XCInduHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

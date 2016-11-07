@@ -38,10 +38,32 @@
 @property (nonatomic, strong) NSString	*tech_count;
 @property (nonatomic, strong) NSString	*kinfo_one;
 @property (nonatomic, strong) NSString	*kinfo_country;
-
 @property (nonatomic, assign) BOOL		isOpen;
 
-+ (void)loadInduSuccess:(void (^)(NSArray *log, NSArray *sub))success
-				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+/**
+ 加载行业矩阵行业
 
+ @param IndustryId 行业ID
+ @param classId 类别ID
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)loadInduID:(NSString *)IndustryId
+		  classify:(NSString *)classId
+		   Success:(void (^)(NSArray *logd, NSArray *subd))success
+		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+
+/**
+ 加载行业矩阵行业
+ 
+ @param IndustryId 行业ID
+ @param classId 类别ID
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)loadDataID:(NSString *)IndustryId
+		  classify:(NSString *)classId
+		   Success:(void (^)(NSArray *logd, NSArray *subd, NSString * Id))success
+		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 @end
