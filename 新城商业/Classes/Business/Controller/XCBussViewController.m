@@ -59,11 +59,28 @@
 }
 
 - (void)setupLoadView {
+	
+	MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+														 refreshingAction:@selector(loadDataNews)];
+
+	// 设置自动切换透明度(在导航栏下面自动隐藏)
+	header.automaticallyChangeAlpha = YES;
+	// 隐藏时间
+	header.lastUpdatedTimeLabel.hidden = YES;
 	// 下拉加载数据
-	self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
-																	 refreshingAction:@selector(loadDataNews)];
-	self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
-																refreshingAction:@selector(loadDataVideos)];
+	self.collectionView.mj_header = header;
+	
+	
+	MJRefreshNormalHeader *header2 = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+																	 refreshingAction:@selector(loadDataVideos)];
+	// 设置自动切换透明度(在导航栏下面自动隐藏)
+	header2.automaticallyChangeAlpha = YES;
+	// 隐藏时间
+	header2.lastUpdatedTimeLabel.hidden = YES;
+	// 下拉加载数据
+	self.tableView.mj_header = header2;
+	
+	
 	[self.collectionView.mj_header beginRefreshing];
 	[self.tableView.mj_header beginRefreshing];
 }
