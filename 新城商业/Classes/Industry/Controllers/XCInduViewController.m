@@ -21,15 +21,15 @@
 /// 目录
 @property (nonatomic, strong) UITableView		*logTableView;
 /// 内容
-@property (nonatomic, strong) UITableView		*contentTableView;
+@property (nonatomic, strong) XCTableView		*contentTableView;
 /// 目录标题
 @property (nonatomic, strong) NSArray			*models;
 /// 目录内容
 @property (nonatomic, strong) NSArray			*logModels;
 /// 内容标题
-@property (nonatomic, strong) NSArray			*models2;
+@property (nonatomic, strong) NSMutableArray	*models2;
 /// 内容内容
-@property (nonatomic, strong) NSArray			*logModels2;
+@property (nonatomic, strong) NSMutableArray	*logModels2;
 
 /// ICON
 @property (nonatomic, strong) XCIconHeader		*header;
@@ -39,6 +39,9 @@
 @property (nonatomic, strong) NSString				*currentChannel;
 /// 当前 频道模型
 @property (nonatomic, strong) XCXCInduModel			*curretnModel;
+/// 当前页数
+@property (nonatomic, assign) NSInteger				currentPage;
+@property (nonatomic, assign) BOOL					loadingFlag;
 
 @end
 
@@ -48,17 +51,35 @@
     [super viewDidLoad];
 	
 	[self setupView];
-	
-	[self loadData];
+	[self setupRefreshView];
+//	[self loadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	if (self.models == 0) {
+		[self loadData];
+	}
+}
+
+/// 刷新视图
+- (void)setupRefreshView {
+	/// 加载更多
+	self.contentTableView.mj_footer
+	= [MJRefreshBackNormalFooter footerWithRefreshingTarget:self
+										   refreshingAction:@selector(loadMoreData)];
+}
+/// 初始化界面
 - (void)setupView {
 
+	self.tableLabel.text = @"";
+	self.collectionLabel.text = @"行业矩阵";
+	
 	self.currentChannel = CURRENTCHANNEL;
 	
 	// 1.
-	self.view.backgroundColor = [UIColor greenColor];
-	[self hiddenAllNav];
+	self.view.backgroundColor = [UIColor whiteColor];
+//	[self hiddenAllNav];
 	
 	// 2.
 	self.logTableView  = ({
@@ -75,8 +96,8 @@
 	
 	// 3.
 	self.contentTableView = ({
-		UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(LOGTAB_W,
-													NAVBAR_H * 2, SCREEN_W - LOGTAB_W, SCREEN_H - NAVBAR_H)
+		XCTableView *tableView = [[XCTableView alloc] initWithFrame:CGRectMake(LOGTAB_W,
+													NAVBAR_H * 2, SCREEN_W - LOGTAB_W, SCREEN_H - NAVBAR_H * 2)
 															  style:UITableViewStyleGrouped];
 		tableView.delegate		= self;
 		tableView.dataSource	= self;
@@ -90,49 +111,91 @@
 }
 /// 初始化加载
 - (void)loadData {
-
-	[JRProgressHUD showHUDAddedTo:self.view];
+	
+	self.loadingFlag  = YES;
+	[JRProgressHUD showHUDAddedTo:self.contentTableView];
 	[XCInduService loadDataInduID:nil classify:self.currentChannel Success:^(NSArray *log, NSArray *sub, NSArray *log2, NSArray *sub2) {
 		self.models			= sub;
 		self.logModels		= log;
-		self.models2		= sub2;
-		self.logModels2		= log2;
+		self.models2		= sub2.mutableCopy;
+		self.logModels2		= log2.mutableCopy;
 		[self.logTableView reloadData];
 		[self.contentTableView reloadData];
-		
+		if (log2.count == 0) {
+			self.contentTableView.type = XCTableViewNoData;
+		} else {
+			self.contentTableView.type = XCTableViewNormal;
+		}
 		self.curretnModel = sub[0][0];
-		[JRProgressHUD hideHUDForView:self.view];
+		self.currentPage  = 2;
+		self.loadingFlag  = NO;
+		[JRProgressHUD hideHUDForView:self.contentTableView];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
-		[JRProgressHUD hideHUDForView:self.view];
+		self.loadingFlag  = NO;
+		self.contentTableView.type = XCTableViewError;
+		[JRProgressHUD hideHUDForView:self.contentTableView];
 	}];
 }
-/// 点击分类加载
-- (void)loadContent {
+/// 加载更多数据
+- (void)loadMoreData {
+	NSLog(@"----- %zd", self.currentPage);
 	
+	if (_loadingFlag) {
+		[self.contentTableView.mj_footer endRefreshing];
+		return;
+	}
+	
+	[XCInduDetialModel loadInduID:self.curretnModel.in_id classify:self.currentChannel pageNumb:self.currentPage Success:^(NSArray *logd, NSArray *subd) {
+		
+		if (logd.count == 0 || subd.count == 0) {
+			[self.contentTableView.mj_footer endRefreshingWithNoMoreData];
+		} else {
+			[self.logModels2 addObjectsFromArray:logd];
+			[self.models2 addObjectsFromArray:subd];
+			[self.contentTableView reloadData];
+			[self.contentTableView.mj_footer endRefreshing];
+		}
+		self.currentPage++;
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		[self.contentTableView.mj_footer endRefreshing];
+	}];
 }
 /// 选择频道
 - (void)loadDataWith:(XCXCInduModel *)model {
 	/// 保存所选频道
 	self.curretnModel = model;
-	
+	self.currentPage  = 0;
+	self.loadingFlag  = YES;
 	/// 清理数据
 	self.models2 = nil;
 	self.logModels2 = nil;
 	[self.contentTableView reloadData];
 	
 	/// 加载数据
-	[JRProgressHUD showHUDAddedTo:self.view];
-	[XCInduDetialModel loadDataID:model.in_id classify:self.currentChannel Success:^(NSArray *logd, NSArray *subd, NSString *Id) {
-		NSLog(@"---- %@ - %@", Id, self.curretnModel.in_id);
-		if ([Id isEqualToString:self.curretnModel.in_id]) {
-			self.models2		= subd;
-			self.logModels2		= logd;
-			[self.contentTableView reloadData];
+	[JRProgressHUD showHUDAddedTo:self.contentTableView];
+	[XCInduDetialModel loadDataID:model.in_id classify:self.currentChannel Success:^(NSArray *logd, NSArray *subd, NSString *Id, NSString * classId) {
+		if ([Id isEqualToString:self.curretnModel.in_id]
+					&& [self.currentChannel isEqualToString:classId]) {
+			
+			if (logd.count == 0) {
+				self.contentTableView.type = XCTableViewNoData;
+			} else {
+				self.contentTableView.type = XCTableViewNormal;
+				self.models2		= subd.mutableCopy;
+				self.logModels2		= logd.mutableCopy;
+				[self.contentTableView reloadData];
+				self.currentPage = 2;
+			}
 		}
-		[JRProgressHUD hideHUDForView:self.view];
+		self.loadingFlag  = NO;
+		[JRProgressHUD hideHUDForView:self.contentTableView];
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
-		[JRProgressHUD hideHUDForView:self.view];
+		self.loadingFlag  = NO;
+		self.contentTableView.type = XCTableViewError;
+		[JRProgressHUD hideHUDForView:self.contentTableView];
 	}];
+	
+	[self.contentTableView.mj_footer endRefreshing];
 }
 
 #pragma mark -
@@ -274,9 +337,7 @@
 	if (_header) {
 		return _header;
 	}
-	
-	_header = [[XCIconHeader alloc] initWithFrame:CGRectMake(0, 0, LOGTAB_W, LOGTAB_W / 5 * 2)];
-	
+	_header = [[XCIconHeader alloc] initWithFrame:CGRectMake(0, 0, LOGTAB_W, LOGTAB_W / 3 * 2)];
 	return _header;
 }
 

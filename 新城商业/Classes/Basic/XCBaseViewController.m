@@ -69,7 +69,7 @@
 	// 3. tabBar left View
 	self.leftView = ({
 		UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, XCTLIN_X, NAVBAR_H)];
-		view.backgroundColor = [UIColor redColor];
+//		view.backgroundColor = [UIColor redColor];
 		[self.myNavigationBar addSubview:view];
 		view;
 	});

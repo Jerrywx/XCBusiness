@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A3F27E7C631C9A8C60799F6 /* libPods-新城商业.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEEEBA4EB8478FC4DEA5081 /* libPods-新城商业.a */; };
 		BE264E76F89FBF4F04DB1D31 /* libPods-新城商业UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1743A6109C8F44949860EA /* libPods-新城商业UITests.a */; };
+		C4038A561DD21AEE00E593CE /* XCTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4038A551DD21AEE00E593CE /* XCTableView.m */; };
 		C4038B6B1DC7936E0032EA7C /* XCInduContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4038B6A1DC7936E0032EA7C /* XCInduContentCell.m */; };
 		C41165EC1DC701040012F928 /* XCInduHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41165EB1DC701040012F928 /* XCInduHeaderView.m */; };
 		C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C42646DD1D08E9370063C3DD /* NSArray+Log.m */; };
@@ -88,6 +89,8 @@
 		4DEEEBA4EB8478FC4DEA5081 /* libPods-新城商业.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-新城商业.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1743A6109C8F44949860EA /* libPods-新城商业UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-新城商业UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C7236CBA8CA5A574626590 /* Pods-新城商业UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新城商业UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-新城商业UITests/Pods-新城商业UITests.release.xcconfig"; sourceTree = "<group>"; };
+		C4038A541DD21AEE00E593CE /* XCTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTableView.h; sourceTree = "<group>"; };
+		C4038A551DD21AEE00E593CE /* XCTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTableView.m; sourceTree = "<group>"; };
 		C4038B691DC7936E0032EA7C /* XCInduContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduContentCell.h; sourceTree = "<group>"; };
 		C4038B6A1DC7936E0032EA7C /* XCInduContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduContentCell.m; sourceTree = "<group>"; };
 		C41165EA1DC701040012F928 /* XCInduHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduHeaderView.h; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 				C428F2751CCD240400E8129B /* XCBaseViewController.m */,
 				C4A081A71DD18EFD005C3E74 /* XCRefreshHeader.h */,
 				C4A081A81DD18EFD005C3E74 /* XCRefreshHeader.m */,
+				C4038A541DD21AEE00E593CE /* XCTableView.h */,
+				C4038A551DD21AEE00E593CE /* XCTableView.m */,
 			);
 			name = "Basic(基类)";
 			path = Basic;
@@ -967,6 +972,7 @@
 				C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */,
 				C4FD08761D1D6E7300C7AA94 /* XCNewsDetialViewController.m in Sources */,
 				C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */,
+				C4038A561DD21AEE00E593CE /* XCTableView.m in Sources */,
 				C446866A1CD1FEBC009FF94D /* XCTestViewController.m in Sources */,
 				C4D3C0621D2EAEA0007B9803 /* XCRightExtenController.m in Sources */,
 				C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */,

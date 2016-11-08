@@ -30,11 +30,11 @@
 
 + (void)loadDataID:(NSString *)IndustryId
 		  classify:(NSString *)classId
-		   Success:(void (^)(NSArray *logd, NSArray *subd, NSString * Id))success
+		   Success:(void (^)(NSArray *logd, NSArray *subd, NSString * Id, NSString * classId))success
 		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
 	[self loadInduID:IndustryId classify:classId Success:^(NSArray *logd, NSArray *subd) {
-		success(logd, subd, IndustryId);
+		success(logd, subd, IndustryId, classId);
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		failure(task, error);
 	}];
@@ -45,13 +45,52 @@
 		   Success:(void (^)(NSArray *logd, NSArray *subd))success
 		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
-	NSDictionary *param = @{@"page"	 : @"1",
+//	NSDictionary *param = @{@"page"	 : @"1",
+//							@"kt_id" : classId,
+//							@"in_id" : IndustryId};
+
+//	[[XCNetWorkManager shareManager] postWithURL:_kAPI_InduData parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+//		
+//		XCResponse *response = [XCResponse initWithJson:responseObject];
+//		if (response.errorcode == XCNetWorkSuccess) {
+//			NSMutableArray *oneArray = [NSMutableArray array];
+//			NSMutableArray *twoArray = [NSMutableArray array];
+//			
+//			for (NSDictionary *dict in response.data) {
+//				XCInduDetialModel *model = [XCInduDetialModel mj_objectWithKeyValues:dict];
+//				if ([model.products isKindOfClass:[NSArray class]]) {
+//					[oneArray addObject:model];
+//					NSArray *array = [XCDetialModel mj_objectArrayWithKeyValuesArray:model.products];
+//					[self operateModels:array];
+//					[twoArray addObject:array];
+//				}
+//			}
+//			success(oneArray, twoArray);
+//		} else {
+//			success(@[], @[]);
+//		}
+//	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+//		NSLog(@"==== %@", error);
+//	}];
+	[self loadInduID:IndustryId classify:classId pageNumb:1 Success:^(NSArray *logd, NSArray *subd) {
+		success(logd, subd);
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		failure(task, error);
+	}];
+}
+
++ (void)loadInduID:(NSString *)IndustryId
+		  classify:(NSString *)classId
+		  pageNumb:(NSInteger)page
+		   Success:(void (^)(NSArray *logd, NSArray *subd))success
+		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
+	
+	NSDictionary *param = @{@"page"	 : @(page),
 							@"kt_id" : classId,
 							@"in_id" : IndustryId};
-//	NSLog(@"内容参数: %@", param);
+	
 	[[XCNetWorkManager shareManager] postWithURL:_kAPI_InduData parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
 		
-//		NSLog(@"数据: %@", responseObject);
 		XCResponse *response = [XCResponse initWithJson:responseObject];
 		if (response.errorcode == XCNetWorkSuccess) {
 			NSMutableArray *oneArray = [NSMutableArray array];
@@ -71,7 +110,7 @@
 			success(@[], @[]);
 		}
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-		NSLog(@"==== %@", error);
+		failure(task, error);
 	}];
 }
 

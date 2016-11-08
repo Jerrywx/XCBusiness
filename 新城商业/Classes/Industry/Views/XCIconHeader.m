@@ -13,8 +13,12 @@
 - (instancetype)initWithFrame:(CGRect)frame {
 	
 	self = [super initWithFrame:frame];
-
-	self.backgroundColor = [UIColor orangeColor];
+	
+	UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,
+											frame.size.width, frame.size.height)];
+	imageView.contentMode = UIViewContentModeCenter;
+	[self addSubview:imageView];
+	imageView.image = [UIImage imageNamed:@"Indu"];
 	
 	return self;
 }

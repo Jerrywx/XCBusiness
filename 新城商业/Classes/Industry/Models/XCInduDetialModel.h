@@ -64,6 +64,22 @@
  */
 + (void)loadDataID:(NSString *)IndustryId
 		  classify:(NSString *)classId
-		   Success:(void (^)(NSArray *logd, NSArray *subd, NSString * Id))success
+		   Success:(void (^)(NSArray *logd, NSArray *subd, NSString * Id, NSString * classId))success
 		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+/**
+ <#Description#>
+
+ @param IndustryId <#IndustryId description#>
+ @param classId <#classId description#>
+ @param page <#page description#>
+ @param success <#success description#>
+ @param failure <#failure description#>
+ */
++ (void)loadInduID:(NSString *)IndustryId
+		  classify:(NSString *)classId
+		  pageNumb:(NSInteger)page
+		   Success:(void (^)(NSArray *logd, NSArray *subd))success
+		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
 @end

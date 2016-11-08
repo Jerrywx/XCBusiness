@@ -24,6 +24,9 @@
 #import "XCRefreshHeader.h"														// 刷新
 #import "JRProgressHUD.h"
 
+
+#import "XCTableView.h"				/// XCTableView.h
+
 // 播放器界面
 #import "XCPlayerViewController.h"
 #import "XCNewsViewController.h"
