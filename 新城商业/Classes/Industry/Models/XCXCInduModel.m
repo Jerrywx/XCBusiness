@@ -16,7 +16,6 @@
 	NSDictionary *param = @{@"In_p" : @"25"};
 	
 	[[XCNetWorkManager shareManager] postWithURL:_kAPI_InduMenu parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-		
 		XCResponse *response = [XCResponse initWithJson:responseObject];
 		
 		NSMutableArray *logArray = [NSMutableArray array];

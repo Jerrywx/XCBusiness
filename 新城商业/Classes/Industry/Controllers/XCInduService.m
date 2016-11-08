@@ -18,16 +18,11 @@
 				failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 
 	[XCXCInduModel loadInduSuccess:^(NSArray *log, NSArray *sub) {
-		NSLog(@"数据: %@", log);
-		NSLog(@"数据: %@", sub);
-		
 		if (sub.count > 0) {
 			NSString *IndustryId = [[[sub firstObject]firstObject] in_id];
 			
 			[XCInduDetialModel loadInduID:IndustryId classify:classId Success:^(NSArray *logd, NSArray *subd) {
 				success(log, sub, logd, subd);
-				NSLog(@"数据: %@", logd);
-				NSLog(@"数据: %@", subd);
 			} failure:^(NSURLSessionDataTask *task, NSError *error) {
 				failure(task, error);
 			}];

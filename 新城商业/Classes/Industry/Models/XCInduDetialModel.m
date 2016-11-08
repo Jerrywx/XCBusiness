@@ -45,10 +45,13 @@
 		   Success:(void (^)(NSArray *logd, NSArray *subd))success
 		   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
-	NSDictionary *param = @{@"kt_id" : classId,
+	NSDictionary *param = @{@"page"	 : @"1",
+							@"kt_id" : classId,
 							@"in_id" : IndustryId};
-
+//	NSLog(@"内容参数: %@", param);
 	[[XCNetWorkManager shareManager] postWithURL:_kAPI_InduData parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+		
+//		NSLog(@"数据: %@", responseObject);
 		XCResponse *response = [XCResponse initWithJson:responseObject];
 		if (response.errorcode == XCNetWorkSuccess) {
 			NSMutableArray *oneArray = [NSMutableArray array];
@@ -64,6 +67,8 @@
 				}
 			}
 			success(oneArray, twoArray);
+		} else {
+			success(@[], @[]);
 		}
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
 		NSLog(@"==== %@", error);

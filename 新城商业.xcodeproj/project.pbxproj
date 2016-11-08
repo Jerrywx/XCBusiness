@@ -44,6 +44,8 @@
 		C49601C31DC3972C0080D51A /* XCXCInduModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49601C21DC3972C0080D51A /* XCXCInduModel.m */; };
 		C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */; };
 		C499AB591DCEDCFB003BCF56 /* XCInduService.m in Sources */ = {isa = PBXBuildFile; fileRef = C499AB581DCEDCFB003BCF56 /* XCInduService.m */; };
+		C4A081A91DD18EFD005C3E74 /* XCRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A081A81DD18EFD005C3E74 /* XCRefreshHeader.m */; };
+		C4A081B01DD190AA005C3E74 /* JRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A081AF1DD190AA005C3E74 /* JRProgressHUD.m */; };
 		C4BE58631D070E5800A2A4FA /* XCBussDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */; };
 		C4BE58661D07150C00A2A4FA /* XCBussVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE58651D07150C00A2A4FA /* XCBussVideoModel.m */; };
 		C4CACE3C1D42691F000DF296 /* XCChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CACE3B1D42691F000DF296 /* XCChannelCell.m */; };
@@ -158,6 +160,10 @@
 		C49651DA1D20196A009B4FD5 /* XCNewsDetialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCNewsDetialModel.m; sourceTree = "<group>"; };
 		C499AB571DCEDCFB003BCF56 /* XCInduService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInduService.h; sourceTree = "<group>"; };
 		C499AB581DCEDCFB003BCF56 /* XCInduService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInduService.m; sourceTree = "<group>"; };
+		C4A081A71DD18EFD005C3E74 /* XCRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRefreshHeader.h; sourceTree = "<group>"; };
+		C4A081A81DD18EFD005C3E74 /* XCRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRefreshHeader.m; sourceTree = "<group>"; };
+		C4A081AE1DD190AA005C3E74 /* JRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRProgressHUD.h; sourceTree = "<group>"; };
+		C4A081AF1DD190AA005C3E74 /* JRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRProgressHUD.m; sourceTree = "<group>"; };
 		C4BE58611D070E5800A2A4FA /* XCBussDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussDelegate.h; sourceTree = "<group>"; };
 		C4BE58621D070E5800A2A4FA /* XCBussDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBussDelegate.m; sourceTree = "<group>"; };
 		C4BE58641D07150C00A2A4FA /* XCBussVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCBussVideoModel.h; sourceTree = "<group>"; };
@@ -379,6 +385,8 @@
 			children = (
 				C428F2741CCD240400E8129B /* XCBaseViewController.h */,
 				C428F2751CCD240400E8129B /* XCBaseViewController.m */,
+				C4A081A71DD18EFD005C3E74 /* XCRefreshHeader.h */,
+				C4A081A81DD18EFD005C3E74 /* XCRefreshHeader.m */,
 			);
 			name = "Basic(基类)";
 			path = Basic;
@@ -440,6 +448,7 @@
 		C428F26A1CCD12AB00E8129B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C4A081AD1DD190AA005C3E74 /* JRProgressHUD */,
 				C42646DB1D08E9370063C3DD /* Log */,
 				C4CDFDF01D06949A0016E864 /* NetworkTools */,
 			);
@@ -587,6 +596,15 @@
 				C4547D351DC6069A00B9840E /* XCIconHeader.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C4A081AD1DD190AA005C3E74 /* JRProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C4A081AE1DD190AA005C3E74 /* JRProgressHUD.h */,
+				C4A081AF1DD190AA005C3E74 /* JRProgressHUD.m */,
+			);
+			path = JRProgressHUD;
 			sourceTree = "<group>";
 		};
 		C4CA73C91CE0A1350091733B /* Channel(频道) */ = {
@@ -928,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F4A15D1D37DA3400E92E24 /* XCChannelLog.m in Sources */,
+				C4A081B01DD190AA005C3E74 /* JRProgressHUD.m in Sources */,
 				C42646EC1D08FEBF0063C3DD /* XCTabBarController.m in Sources */,
 				C4547D361DC6069A00B9840E /* XCIconHeader.m in Sources */,
 				C42646EF1D0908310063C3DD /* XCLeftBarModel.m in Sources */,
@@ -972,6 +991,7 @@
 				C4CE517B1D1192E1006BC136 /* XCNewsTableViewCell.m in Sources */,
 				C499AB591DCEDCFB003BCF56 /* XCInduService.m in Sources */,
 				C41165EC1DC701040012F928 /* XCInduHeaderView.m in Sources */,
+				C4A081A91DD18EFD005C3E74 /* XCRefreshHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,8 @@
 // 自定义: TabBar、LeftBar
 #import "XCTabBarControl.h"
 #import "XCLeftBarControl.h"
+#import "XCRefreshHeader.h"														// 刷新
+#import "JRProgressHUD.h"
 
 // 播放器界面
 #import "XCPlayerViewController.h"
