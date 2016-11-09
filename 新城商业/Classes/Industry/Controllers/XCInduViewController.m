@@ -52,7 +52,6 @@
 	
 	[self setupView];
 	[self setupRefreshView];
-//	[self loadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

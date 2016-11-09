@@ -8,14 +8,17 @@
 
 #import "XCBussViewController.h"
 
-@interface XCBussViewController () //<UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface XCBussViewController () //<UITableViewDataSource, UITableViewDelegate,
+									//UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UITableView					*tableView;
 @property (nonatomic, strong) UICollectionView				*collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout	*layout;			// 布局
 @property (nonatomic, strong) XCBussDelegate				*delegate;			// 代理对象
 
 @property (nonatomic, strong) NSMutableArray<XCBussNewsModel *> *newsModels;	// 右侧新闻数据源
-@property (nonatomic, strong) NSMutableArray<XCBussVideoModel *> *videoModels;	// 右侧新闻数据源
+//@property (nonatomic, strong) NSMutableArray<XCBussVideoModel *> *videoModels;	// 左侧视频
+
+@property (nonatomic, assign) NSInteger	currentPage;
 
 @end
 
@@ -56,31 +59,22 @@
 		[self.view addSubview:collectionView];
 		collectionView;
 	});
+	
+	self.tableView.mj_footer
+	= [MJRefreshBackNormalFooter footerWithRefreshingTarget:self
+										   refreshingAction:@selector(loadMoreData)];
 }
 
 - (void)setupLoadView {
-	
 	XCRefreshHeader *header = [XCRefreshHeader headerWithRefreshingTarget:self
 														 refreshingAction:@selector(loadDataNews)];
-
-//	// 设置自动切换透明度(在导航栏下面自动隐藏)
-//	header.automaticallyChangeAlpha = YES;
-//	// 隐藏时间
-//	header.lastUpdatedTimeLabel.hidden = YES;
 	// 下拉加载数据
 	self.collectionView.mj_header = header;
-	
-	
+
 	XCRefreshHeader *header2 = [XCRefreshHeader headerWithRefreshingTarget:self
 														  refreshingAction:@selector(loadDataVideos)];
-//	// 设置自动切换透明度(在导航栏下面自动隐藏)
-//	header2.automaticallyChangeAlpha = YES;
-//	// 隐藏时间
-//	header2.lastUpdatedTimeLabel.hidden = YES;
 	// 下拉加载数据
 	self.tableView.mj_header = header2;
-	
-	
 	[self.collectionView.mj_header beginRefreshing];
 	[self.tableView.mj_header beginRefreshing];
 }
@@ -96,13 +90,36 @@
 }
 /// 左侧数据
 - (void)loadDataVideos {
-	[XCBussVideoModel loadWithURL:nil success:^(NSMutableArray *models) {
-		self.videoModels = models;
+	[XCBussVideoModel loadWithURL:nil pageNumb:1 success:^(NSMutableArray *models) {
+//		self.videoModels = models;
 		self.delegate.videoModels = models;
 		[self.tableView reloadData];
 		[self.tableView.mj_header endRefreshing];
+		self.currentPage = 2;
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		[self.tableView.mj_header endRefreshing];
+	}];
+}
+
+- (void)loadMoreData {
+	
+	if (self.currentPage == 0) {
+		[self.tableView.mj_footer endRefreshing];
+		return;
+	}
+	
+	[XCBussVideoModel loadWithURL:nil pageNumb:self.currentPage success:^(NSMutableArray *models) {
+		
+		if (models.count > 0) {
+			[self.delegate.videoModels addObjectsFromArray:models];
+			[self.tableView reloadData];
+			[self.tableView.mj_footer endRefreshing];
+		} else {
+			[self.tableView.mj_footer endRefreshingWithNoMoreData];
+		}
+		self.currentPage++;
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		[self.tableView.mj_footer endRefreshing];
 	}];
 }
 

@@ -14,7 +14,6 @@
 NSString * const _kAPI_BaseUrl				=       @"http://api.xincheng.tv/";
 
 /// 左侧菜单
-//NSString * const _kAPI_GetLeftMuen			=       @"http://api.xincheng.tv/api/getchannellist/";
 NSString * const _kAPI_GetLeftMuen			=       @"api/getchannellist/";
 
 /***************************************************************************************************/
@@ -25,7 +24,6 @@ NSString * const _kAPI_BusinessLeftVideo	=		@"api/getv_b/";
 
 /// 右侧 数据
 NSString * const _kAPI_BusinessRightData	=		@"api/getcontent/";
-
 
 /***************************************************************************************************/
 /**												频道												  **/

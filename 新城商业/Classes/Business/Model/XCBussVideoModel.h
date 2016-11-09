@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString	*vb_num;
 
 + (void)loadWithURL:(NSString *)urlString
+		   pageNumb:(NSInteger)pageNumb
 			success:(void (^)(NSMutableArray *models))success
 			failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 

@@ -20,7 +20,7 @@
 /**
  *  左侧视频列表模型
  */
-@property (nonatomic, strong) NSArray *videoModels;
+@property (nonatomic, strong) NSMutableArray<XCBussVideoModel *> *videoModels;
 
 /**
  *  右侧新闻列表

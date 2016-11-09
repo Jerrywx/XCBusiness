@@ -11,13 +11,16 @@
 @implementation XCBussVideoModel
 
 + (void)loadWithURL:(NSString *)urlString
+		   pageNumb:(NSInteger)pageNumb
 			success:(nullable void (^)(NSMutableArray *models))success
 			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
-	[[XCNetWorkManager shareManager] postWithURL:_kAPI_BusinessLeftVideo parameters:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+	NSDictionary *param = @{@"page" : @(pageNumb)};
+	
+	[[XCNetWorkManager shareManager] postWithURL:_kAPI_BusinessLeftVideo parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
 
 		XCResponse *response = [XCResponse initWithJson:responseObject];
-		
+		NSLog(@"shu: %@", responseObject);
 		if (response.errorcode == XCNetWorkSuccess) {
 			NSArray *datas = responseObject[@"data"];
 			NSMutableArray *models = [NSMutableArray arrayWithCapacity:datas.count];
@@ -29,7 +32,7 @@
 			
 			success(models);
 		} else {
-			 failure(task, nil);
+			success(@[]);
 		}
 		
 	 } failure:^(NSURLSessionDataTask * _Nullable task, 
