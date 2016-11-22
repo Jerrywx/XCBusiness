@@ -24,7 +24,7 @@
 - (void)setupView {
 	// 1. 基础设置
 	self.tableLabel.text		= @"《数据库》节目";
-	self.collectionLabel.text	= @"数据库";
+	self.collectionLabel.text	= @"数据";
 	self.view.backgroundColor	= [UIColor grayColor];
 	
 	// 2. tableView

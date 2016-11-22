@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3018282C1DE40D38008EC092 /* XCDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3018282A1DE40D38008EC092 /* XCDataViewController.m */; };
 		8A3F27E7C631C9A8C60799F6 /* libPods-新城商业.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEEEBA4EB8478FC4DEA5081 /* libPods-新城商业.a */; };
 		BE264E76F89FBF4F04DB1D31 /* libPods-新城商业UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1743A6109C8F44949860EA /* libPods-新城商业UITests.a */; };
 		C4038A561DD21AEE00E593CE /* XCTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4038A551DD21AEE00E593CE /* XCTableView.m */; };
@@ -26,7 +27,6 @@
 		C428F2521CCCE83800E8129B /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2511CCCE83800E8129B /* ____UITests.m */; };
 		C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2611CCD12AB00E8129B /* AppDelegate.m */; };
 		C428F2761CCD240400E8129B /* XCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2751CCD240400E8129B /* XCBaseViewController.m */; };
-		C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F27E1CCD255000E8129B /* XCDataViewController.m */; };
 		C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C428F2841CCD256200E8129B /* XCInveViewController.m */; };
 		C4320B4F1D3D1734003E08AB /* XCChannelHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4320B4E1D3D1734003E08AB /* XCChannelHeaderView.m */; };
 		C436D6AE1D3254BD00B3822D /* XCBaseChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D6A91D3254BD00B3822D /* XCBaseChannelViewController.m */; };
@@ -84,6 +84,8 @@
 
 /* Begin PBXFileReference section */
 		16408EA6089B790D6C5674E5 /* Pods-新城商业.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新城商业.debug.xcconfig"; path = "Pods/Target Support Files/Pods-新城商业/Pods-新城商业.debug.xcconfig"; sourceTree = "<group>"; };
+		301828291DE40D38008EC092 /* XCDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDataViewController.h; sourceTree = "<group>"; };
+		3018282A1DE40D38008EC092 /* XCDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDataViewController.m; sourceTree = "<group>"; };
 		32344B1250765C7E377E683D /* Pods-新城商业Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-新城商业Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-新城商业Tests/Pods-新城商业Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		41D286C306C8916C9941A631 /* libPods-新城商业Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-新城商业Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEEEBA4EB8478FC4DEA5081 /* libPods-新城商业.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-新城商业.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,8 +127,6 @@
 		C428F2751CCD240400E8129B /* XCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCBaseViewController.m; sourceTree = "<group>"; };
 		C428F2781CCD247200E8129B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C428F2791CCD24A200E8129B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		C428F27D1CCD255000E8129B /* XCDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDataViewController.h; sourceTree = "<group>"; };
-		C428F27E1CCD255000E8129B /* XCDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDataViewController.m; sourceTree = "<group>"; };
 		C428F2831CCD256200E8129B /* XCInveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCInveViewController.h; sourceTree = "<group>"; };
 		C428F2841CCD256200E8129B /* XCInveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCInveViewController.m; sourceTree = "<group>"; };
 		C4320B4D1D3D1734003E08AB /* XCChannelHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCChannelHeaderView.h; sourceTree = "<group>"; };
@@ -241,6 +241,29 @@
 				A7C7236CBA8CA5A574626590 /* Pods-新城商业UITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		301828271DE40D38008EC092 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		301828281DE40D38008EC092 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				301828291DE40D38008EC092 /* XCDataViewController.h */,
+				3018282A1DE40D38008EC092 /* XCDataViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3018282B1DE40D38008EC092 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5CCAE73BBEDEFB73BDDA14D8 /* Frameworks */ = {
@@ -411,8 +434,9 @@
 		C428F2661CCD12AB00E8129B /* Database(数据库) */ = {
 			isa = PBXGroup;
 			children = (
-				C428F27D1CCD255000E8129B /* XCDataViewController.h */,
-				C428F27E1CCD255000E8129B /* XCDataViewController.m */,
+				301828281DE40D38008EC092 /* Controllers */,
+				301828271DE40D38008EC092 /* Cells */,
+				3018282B1DE40D38008EC092 /* Views */,
 			);
 			name = "Database(数据库)";
 			path = Database;
@@ -968,7 +992,6 @@
 				C42646EB1D08FEBF0063C3DD /* XCTabBarControl.m in Sources */,
 				C4FC4A8D1D10387B00300CF6 /* XCNewsViewController.m in Sources */,
 				C42646DE1D08E9370063C3DD /* NSArray+Log.m in Sources */,
-				C428F27F1CCD255000E8129B /* XCDataViewController.m in Sources */,
 				C428F26B1CCD12AB00E8129B /* AppDelegate.m in Sources */,
 				C4FD08761D1D6E7300C7AA94 /* XCNewsDetialViewController.m in Sources */,
 				C49651DB1D20196A009B4FD5 /* XCNewsDetialModel.m in Sources */,
@@ -988,6 +1011,7 @@
 				C451DE8B1DBF974000B70A4E /* XCConstString.m in Sources */,
 				C428F2851CCD256200E8129B /* XCInveViewController.m in Sources */,
 				C42646EA1D08FEBF0063C3DD /* XCLeftBarControl.m in Sources */,
+				3018282C1DE40D38008EC092 /* XCDataViewController.m in Sources */,
 				C4038B6B1DC7936E0032EA7C /* XCInduContentCell.m in Sources */,
 				C49601C01DC396EC0080D51A /* XCInduViewController.m in Sources */,
 				C4320B4F1D3D1734003E08AB /* XCChannelHeaderView.m in Sources */,
