@@ -28,10 +28,16 @@ typedef enum : NSUInteger {				// 数据类型
 @property (nonatomic, strong) NSString	*nvg_url;		// 链接
 
 
-/// 新城商业首页 左侧视频数据
-+ (void)loadWithURL:(NSString *)urlString
-			success:(void (^)(NSMutableArray *models))success
-			failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+/**
+ 新城商业首页 左侧视频数据
+ 
+ @param pageNumb 页数
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)loadWithPage:(NSInteger)pageNumb
+			 success:(void (^)(NSMutableArray *models))success
+			 failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 /// 新城商业首页 右侧数据
 + (void)loadChannel:(NSString *)urlString

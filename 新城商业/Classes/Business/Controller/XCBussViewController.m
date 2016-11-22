@@ -18,7 +18,10 @@
 @property (nonatomic, strong) NSMutableArray<XCBussNewsModel *> *newsModels;	// 右侧新闻数据源
 //@property (nonatomic, strong) NSMutableArray<XCBussVideoModel *> *videoModels;	// 左侧视频
 
+///
 @property (nonatomic, assign) NSInteger	currentPage;
+///
+@property (nonatomic, assign) NSInteger	currentPage2;
 
 @end
 
@@ -63,6 +66,9 @@
 	self.tableView.mj_footer
 	= [MJRefreshBackNormalFooter footerWithRefreshingTarget:self
 										   refreshingAction:@selector(loadMoreData)];
+	self.collectionView.mj_footer
+	= [MJRefreshBackNormalFooter footerWithRefreshingTarget:self
+										   refreshingAction:@selector(loadMoreData2)];
 }
 
 - (void)setupLoadView {
@@ -81,9 +87,10 @@
 /// 右侧数据
 - (void)loadDataNews {
 	//
-	[XCBussNewsModel loadWithURL:nil success:^(NSMutableArray *models) {
+	[XCBussNewsModel loadWithPage:1 success:^(NSMutableArray *models) {
 		self.newsModels = models;
 		[self.collectionView.mj_header endRefreshing];
+		self.currentPage2 = 2;
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		[self.collectionView.mj_header endRefreshing];
 	}];
@@ -120,6 +127,28 @@
 		self.currentPage++;
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
 		[self.tableView.mj_footer endRefreshing];
+	}];
+}
+
+- (void)loadMoreData2 {
+	if (self.currentPage2 == 0) {
+		[self.collectionView.mj_footer endRefreshing];
+		return;
+	}
+	
+	[XCBussNewsModel loadWithPage:self.currentPage2 success:^(NSMutableArray *models) {
+		
+		
+		if (models.count > 0) {
+			[self.newsModels addObjectsFromArray:models];
+			[self.collectionView reloadData];
+			[self.collectionView.mj_footer endRefreshing];
+		} else {
+			[self.collectionView.mj_footer endRefreshingWithNoMoreData];
+		}
+		self.currentPage2++;
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		[self.collectionView.mj_footer endRefreshing];
 	}];
 }
 

@@ -10,11 +10,13 @@
 
 @implementation XCBussNewsModel
 
-+ (void)loadWithURL:(NSString *)urlString
-			success:(nullable void (^)(NSMutableArray *models))success
-			failure:(nullable void (^)(NSURLSessionDataTask *task, NSError *error))failure {
+/// 加载首页 右侧数据
++ (void)loadWithPage:(NSInteger)pageNumb
+			 success:(void (^)(NSMutableArray *models))success
+			 failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
 	
-	NSDictionary *param = @{@"cr_p":@"2"};
+	NSDictionary *param = @{@"cr_p":@"2",
+							@"page":@(pageNumb)};
 	[[XCNetWorkManager shareManager] postWithURL:_kAPI_BusinessRightData parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
 		NSLog(@"右侧数据: %@", responseObject);
 		XCResponse *response = [XCResponse initWithJson:responseObject];
@@ -28,7 +30,7 @@
 			}
 			success(models);
 		} else {
-			failure(task, nil);
+			success(@[].mutableCopy);
 		}
 		
 	} failure:^(NSURLSessionDataTask * _Nullable task,
@@ -38,6 +40,7 @@
 }
 
 
+//// 加载频道
 + (void)loadChannel:(NSString *)urlString
 			success:(void (^)(NSMutableArray *models))success
 			failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
@@ -68,7 +71,6 @@
 		failure(task, error);
 	}];
 }
-
 
 - (NSString *)description {
 	return [NSString stringWithFormat:@"%@ - %@", self.title1, self.title2];

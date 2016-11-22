@@ -32,7 +32,7 @@
 			
 			success(models);
 		} else {
-			success(@[]);
+			success(@[].mutableCopy);
 		}
 		
 	 } failure:^(NSURLSessionDataTask * _Nullable task, 
